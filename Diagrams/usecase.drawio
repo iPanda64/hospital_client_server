@@ -1,0 +1,236 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Pagină-1" id="Ija5GqVooe0pVT_b3J1r">
+    <mxGraphModel dx="1167" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-3" target="HULSn-tS5SCW9Gi9brWb-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="HULSn-tS5SCW9Gi9brWb-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="140" as="sourcePoint" />
+            <mxPoint x="235" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-3" value="Administrator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="70" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-4" value="CRUD pentru fiecare cont&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="90" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-5" value="Login la cont&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-6" value="Vizualizare cont" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="270" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-3" target="HULSn-tS5SCW9Gi9brWb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="HULSn-tS5SCW9Gi9brWb-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="505" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-14" target="HULSn-tS5SCW9Gi9brWb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-14" target="HULSn-tS5SCW9Gi9brWb-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-14" target="HULSn-tS5SCW9Gi9brWb-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-14" target="HULSn-tS5SCW9Gi9brWb-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-14" target="HULSn-tS5SCW9Gi9brWb-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-14" value="Pacient&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="440" width="70" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-15" value="Creare cont" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-16" value="Vizualizare facturi" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-17" value="Solicitare creare de programare" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="610" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-18" value="Vizualizare programări&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-20" target="HULSn-tS5SCW9Gi9brWb-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="880" />
+              <mxPoint x="270" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-20" value="Vizualizare istoric medical" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="840" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-21" value="Rezultate consultatii" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="960" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="150" />
+              <mxPoint x="500" y="192" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-28" value="Doctor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1009" y="80" width="81" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-29" value="Vizualizare fisa medicala pacient" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-30" value="Vizualizare date personale pentru pacienți&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-31" value="Vizualizare programări&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-32" value="Creare și vizualizare prescriptie pentru pacient(consultație curenta)&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="350" width="158" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-40" target="HULSn-tS5SCW9Gi9brWb-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1104" y="480" />
+              <mxPoint x="560" y="480" />
+              <mxPoint x="560" y="360" />
+              <mxPoint x="440" y="360" />
+              <mxPoint x="440" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-40" value="Asistent" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1059" y="520" width="81" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-41" value="Vizualizare date personale pentru pacient" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="828" y="510" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-42" value="Vizualizare,creare ștergerea și aprobare programări pacienți" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="828" y="630" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-43" value="Vizualizare prescriptie pacient" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="828" y="740" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-44" value="Printare factura consultație" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="828" y="840" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-45" value="Vizualizare lista pacienti" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="670" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.378;entryY=-0.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-28" target="HULSn-tS5SCW9Gi9brWb-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-47" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-44" target="HULSn-tS5SCW9Gi9brWb-45">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="660" y="810" as="sourcePoint" />
+            <mxPoint x="820" y="810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-48" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.64;entryY=0.995;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="828" y="790" as="sourcePoint" />
+            <mxPoint x="696.8000000000002" y="750.0000000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="697" y="790.4" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-49" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.64;entryY=0.047;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.037;exitY=0.265;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-41" target="HULSn-tS5SCW9Gi9brWb-45">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="827" y="549.66" as="sourcePoint" />
+            <mxPoint x="987" y="549.66" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="700" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-50" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.037;exitY=0.265;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HULSn-tS5SCW9Gi9brWb-45">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="790" y="401" as="sourcePoint" />
+            <mxPoint x="655" y="544" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-51" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.037;entryY=0.509;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="HULSn-tS5SCW9Gi9brWb-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="400" as="sourcePoint" />
+            <mxPoint x="810" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-52" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.037;entryY=0.509;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="200" as="sourcePoint" />
+            <mxPoint x="786" y="71" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HULSn-tS5SCW9Gi9brWb-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.117;entryY=0.829;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HULSn-tS5SCW9Gi9brWb-14" target="HULSn-tS5SCW9Gi9brWb-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="246" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
