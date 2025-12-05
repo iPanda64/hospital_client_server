@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f3c85bc-8e16-46ac-a4c9-e5fcb816ed22" name="Changes" comment="" />
+    <list default="true" id="7f3c85bc-8e16-46ac-a4c9-e5fcb816ed22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~$termediar_BuleuMihaiAndrei_SaraGhiranCristina.docx" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +59,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Run Client" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -113,6 +121,8 @@
       <workItem from="1763653321323" duration="116000" />
       <workItem from="1763733671007" duration="524000" />
       <workItem from="1764938355627" duration="17586000" />
+      <workItem from="1764965051628" duration="292000" />
+      <workItem from="1764975676273" duration="83000" />
     </task>
     <servers />
   </component>
