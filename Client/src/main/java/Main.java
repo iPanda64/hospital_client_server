@@ -1,11 +1,7 @@
-package app;
-
 import controller.ClientController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.ViewType;
-
-import java.io.IOException;
 
 public class Main extends Application {
 
