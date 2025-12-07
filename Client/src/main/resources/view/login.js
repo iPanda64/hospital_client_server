@@ -22,3 +22,11 @@ function login() {
         }
     }
 }
+
+function switchToCreateAccount() {
+    if (window.javaBridge) {
+        javaBridge.switchToCreateAccount();
+    } else {
+        console.error("Java bridge is not set up.");
+    }
+}

@@ -9,10 +9,14 @@ import java.net.URL;
 
 public class BaseViewController {
 
+    protected final ClientController clientController;
+    protected final Client client;
     protected final WebView webView;
     protected final WebEngine webEngine;
 
-    public BaseViewController(Client client, String htmlFile) {
+    public BaseViewController(ClientController clientController, Client client, String htmlFile) {
+        this.clientController = clientController;
+        this.client = client;
         this.webView = new WebView();
         this.webEngine = webView.getEngine();
         this.webEngine.setJavaScriptEnabled(true);

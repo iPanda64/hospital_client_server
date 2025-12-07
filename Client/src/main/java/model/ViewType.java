@@ -2,5 +2,6 @@ package model;
 
 public enum ViewType {
     LOGIN,
-    CHAT
+    CHAT,
+    CREATE_ACCOUNT,
 }

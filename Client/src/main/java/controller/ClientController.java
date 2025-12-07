@@ -16,7 +16,7 @@ public class ClientController implements MessageHandler {
 
     private final Stage primaryStage;
     private final Client client;
-    private BaseViewController activeController;
+    private static BaseViewController activeController;
     private final Map<UseCaseType, ResponseHandler> responseHandlers;
 
 
@@ -41,11 +41,16 @@ public class ClientController implements MessageHandler {
     public void switchView(ViewType viewType) {
         switch (viewType) {
             case LOGIN:
-                setView(new LoginController(client));
-                primaryStage.show();
+                Platform.runLater(() -> {
+                    setView(new LoginController(this, client));
+                    primaryStage.show();
+                });
                 break;
             case CHAT:
-                Platform.runLater(() -> setView(new ChatController(client)));
+                Platform.runLater(() -> setView(new ChatController(this, client)));
+                break;
+            case CREATE_ACCOUNT:
+                Platform.runLater(() -> setView(new CreateAccountController(this, client)));
                 break;
         }
     }

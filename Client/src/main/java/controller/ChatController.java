@@ -10,8 +10,8 @@ public class ChatController extends BaseViewController {
 
     private final Client client;
 
-    public ChatController(Client client) {
-        super(client, "index.html");
+    public ChatController(ClientController clientController, Client client) {
+        super(clientController, client, "index.html");
         this.client = client;
     }
 

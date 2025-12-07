@@ -2,6 +2,7 @@ package controller;
 
 import model.Request;
 import model.UseCaseType;
+import model.ViewType;
 
 import java.io.IOException;
 
@@ -9,8 +10,8 @@ public class LoginController extends BaseViewController {
 
     private final Client client;
 
-    public LoginController(Client client) {
-        super(client, "login.html");
+    public LoginController(ClientController clientController, Client client) {
+        super(clientController, client, "login.html");
         this.client = client;
     }
 
@@ -21,5 +22,9 @@ public class LoginController extends BaseViewController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void switchToCreateAccount() {
+        clientController.switchView(ViewType.CREATE_ACCOUNT);
     }
 }
