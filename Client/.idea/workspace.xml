@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7f3c85bc-8e16-46ac-a4c9-e5fcb816ed22" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/BaseViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/BaseViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/UseCaseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/UseCaseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ViewType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ViewType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Diagrams/ClientModelViewController.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../Diagrams/ClientModelViewController.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/createAccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/createAccount.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/createAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/createAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Run Client.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Run Client.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;server__model__M&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -142,6 +136,7 @@
       <workItem from="1765058003297" duration="1633000" />
       <workItem from="1765059947638" duration="1910000" />
       <workItem from="1765071910852" duration="2466000" />
+      <workItem from="1765187845315" duration="469000" />
     </task>
     <servers />
   </component>

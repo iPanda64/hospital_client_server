@@ -18,11 +18,20 @@ button {
     font-size: 16px;
     border-radius: 5px;
 }
+button:hover {
+    background-color: #4a8ad4;
+}
 .button_only_text {
     background-color: transparent;
     color: #333;
     padding: 4px 12px;
     border: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+.button_only_text:hover{
+    background-color: transparent;
+    transform: scale(1.1);
 }
 input[type="text"],
 input[type="password"] {
