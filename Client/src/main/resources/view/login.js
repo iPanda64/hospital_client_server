@@ -10,8 +10,6 @@ function login() {
     const password = passwordInput.value;
 
     if (username && password && window.javaBridge) {
-        // As requested, sending the content of the inputs to the server.
-        // The server will need to handle this "login <user> <pass>" message.
         javaBridge.login(username, password);
     } else {
         if (!window.javaBridge) {
