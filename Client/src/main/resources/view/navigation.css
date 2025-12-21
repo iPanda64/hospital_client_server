@@ -1,0 +1,29 @@
+#nav-bar {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    pointer-events: none;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-btn {
+    pointer-events: auto;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background-color: #555;
+}

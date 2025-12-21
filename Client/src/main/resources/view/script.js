@@ -33,3 +33,6 @@ function displayMessage(message, type) {
     log.appendChild(messageDiv);
     log.scrollTop = log.scrollHeight; // Scroll to bottom
 }
+function  next(){
+    javaBridge.next();
+}

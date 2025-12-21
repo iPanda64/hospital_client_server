@@ -3,6 +3,7 @@ package controller;
 import javafx.application.Platform;
 import model.Request;
 import model.UseCaseType;
+import model.ViewType;
 
 import java.io.IOException;
 
@@ -34,5 +35,8 @@ public class ChatController extends BaseViewController {
 
             webEngine.executeScript("displayMessage('" + cleanMessage + "', 'server')");
         });
+    }
+    public void next(){
+        clientController.switchView(ViewType.CREATE_ACCOUNT);
     }
 }

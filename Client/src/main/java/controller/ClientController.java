@@ -5,6 +5,7 @@ import controller.handler.LoginResponseHandler;
 import controller.handler.ResponseHandler;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import model.*;
 
@@ -83,5 +84,15 @@ public class ClientController implements MessageHandler {
 
     public BaseViewController getActiveController() {
         return activeController;
+    }
+
+    public void showError(String message) {
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.showAndWait();
+        });
     }
 }
