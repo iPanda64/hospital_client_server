@@ -1,0 +1,6 @@
+# IntelliJ workspace file
+workspace.xml
+
+# Draw.io temporary/backup files
+*.bkp
+*.dtmp
