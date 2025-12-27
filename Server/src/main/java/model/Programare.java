@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Programare {
+public class Programare implements Serializable {
     private int id;
     private int id_doctor;
     private int id_pacient;

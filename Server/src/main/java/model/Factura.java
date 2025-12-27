@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Factura {
+public class Factura implements Serializable {
     private int id;
     private int id_consultatie;
     private LocalDate data_emitere;

@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Prescriptie {
+public class Prescriptie implements Serializable {
     private int id;
     private int id_consultatie;
     private List<String> medicament;

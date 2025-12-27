@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Consultatie {
+public class Consultatie implements Serializable {
     private int id;
     private int id_programare;
     private String diagnostic;

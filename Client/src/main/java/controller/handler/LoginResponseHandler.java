@@ -13,6 +13,7 @@ public class LoginResponseHandler implements ResponseHandler {
 
     @Override
     public void handle(Response<?> response) {
+        System.out.println(response.getId());
         clientController.switchView(ViewType.CHAT);
     }
 }

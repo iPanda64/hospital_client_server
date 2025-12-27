@@ -17,7 +17,7 @@ public class LoginController extends BaseViewController {
 
     public void login(String username, String password) {
         try {
-            Request loginRequest = new Request(UseCaseType.Login, username + ":" + password);
+            Request loginRequest = new Request(UseCaseType.Login, username + " " + password);
             client.sendToServer(loginRequest);
         } catch (IOException e) {
             e.printStackTrace();
