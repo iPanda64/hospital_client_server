@@ -34,7 +34,7 @@ public class UtilizatorRepository {
         return null;
     }
     public void salvare(Utilizator u) {
-        String sql = "INSERT INTO utilizator (nume, prenume, mail, telefon, data_nasterii, username, parola, tip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO utilizator (nume, prenume, email, numar_telefon, data_nasterii, username, parola, tip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = null;
         try {
             Connection connection = repository.getConnection();
@@ -57,7 +57,7 @@ public class UtilizatorRepository {
         }
     }
     public boolean update(Utilizator u) {
-        String sql = "UPDATE utilizator SET nume = ?, prenume = ?, mail = ?, telefon = ?, " +
+        String sql = "UPDATE utilizator SET nume = ?, prenume = ?, email = ?, numar_telefon = ?, " +
                 "data_nasterii = ?, username = ?, parola = ?, tip = ? WHERE id = ?";
         PreparedStatement statement = null;
         boolean success = false;
