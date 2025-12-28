@@ -19,7 +19,7 @@ public class ClientController implements MessageHandler {
     private final Client client;
     private static BaseViewController activeController;
     private final Map<UseCaseType, ResponseHandler> responseHandlers;
-
+    private static int currentId=-1;
 
     public ClientController(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -94,5 +94,11 @@ public class ClientController implements MessageHandler {
             alert.setContentText(message);
             alert.showAndWait();
         });
+    }
+    public static int getCurrentId(){
+        return currentId;
+    }
+    public static void setCurrentId(int newId){
+        currentId=newId;
     }
 }
