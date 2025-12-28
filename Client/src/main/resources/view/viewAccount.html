@@ -1,0 +1,50 @@
+<!DOCTYPE html<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OCSF Client</title>
+    <link rel="stylesheet" href="viewAccount.css" />
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="greeting-box">
+            <h1>Hello!</h1> <p id="username">Loading...</p>
+        </div>
+
+        <div class="info-box">
+            <table class="info-box ">
+                <tr>
+                    <th>Nume:</th>
+                    <td id="nume">Loading...</td>
+                </tr>
+                <tr>
+                    <th>Prenume:</th>
+                    <td id="prenume">Loading...</td>
+                </tr>
+                <tr>
+                    <th>Numar Telefon:</th>
+                    <td id="numar_telefon">Loading...</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td id="email">Loading...</td>
+                </tr>
+                <tr>
+                    <th>Data Nasterii:</th>
+                    <td id="data_nasterii">Loading...</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="nav-bar">
+        <button id="btn-prev" class="nav-btn" onclick="previous()">« Previous</button>
+        <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
+    </div>
+    
+    <script src="viewAccount.js"></script>
+</body>
+</html>
