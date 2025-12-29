@@ -11,7 +11,17 @@ public class UnknownUserHandler extends AbstractHandler {
         super(request);
     }
     public Response createAccountHandler(Request request) {
-        return null;
+        UtilizatorRepository ur = new UtilizatorRepository(new Repository());
+        Utilizator u=null;
+        try {
+            u = (Utilizator) request.getPayload();
+        } catch (Exception e) {
+            return new Response(request,-1,null,false);
+        }
+        System.out.println(u);
+        ur.salvare(u);
+        Response response = new Response(request,-1,null,true);
+        return response;
     }
     public Response loginHandler(Request request) {
         Response response = null;
@@ -29,7 +39,22 @@ public class UnknownUserHandler extends AbstractHandler {
         String parola = info.substring(spaceIndex + 1);
         UtilizatorRepository ur = new UtilizatorRepository(new Repository());
         Utilizator u = ur.SearchUtilizatorByUsernameAndPassword(username, parola);
-        return new Response<>(request, u.getId(), null  , true);
+        if(u!=null)
+            return new Response<>(request, u.getId(), u.getTip()  , true);
+        else return new Response(request,-1,null,false);
+    }
+    public Response viewAccontHandler(Request request) {
+        Response response = null;
+        try {
+            int id=request.getId();
+            UtilizatorRepository ur = new UtilizatorRepository(new Repository());
+            Utilizator u = ur.findById(id);
+            response = new Response(request, u.getId(), u, true);
+        }
+        catch (NumberFormatException e){
+            response = new Response(request, -1, null, false);
+        }
+        return response;
     }
 
 }

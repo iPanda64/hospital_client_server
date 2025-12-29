@@ -1,9 +1,9 @@
 package model;
 
 public enum UtilizatorType {
-    Doctor,
-    Pacient,
-    Assistent,
-    Administrator,
+    doctor,
+    pacient,
+    assistent,
+    administrator,
     Unknown
 }

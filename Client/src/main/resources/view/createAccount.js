@@ -10,7 +10,6 @@ function createAccount() {
   const phone    = document.getElementById('phone').value;
   const email    = document.getElementById('email').value;
   const birth    = document.getElementById('birth').value;
-
   if (username && password && name && surname && phone && email && birth && window.javaBridge) {
     javaBridge.getAccount(username, password,name,surname,phone,email,birth);
   } else {

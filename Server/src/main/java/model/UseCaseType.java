@@ -2,6 +2,7 @@ package model;
 
 public enum UseCaseType {
     Login,
-    Chat
-    // Add more use cases later
+    Chat,
+    CreateAccount,
+    ViewAccount    // Add more use cases later
 }

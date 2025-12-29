@@ -42,6 +42,21 @@ public class ServerController {
                         Response response = handler.loginHandler(request);
                         client.sendToClient(response);
                         break;
+                    case ViewAccount: {
+                        client.sendToClient(
+                                new UnknownUserManipulator()
+                                        .instantiate(request)
+                                        .viewAccontHandler(request));
+                        break;
+                    }
+                    case CreateAccount:{
+                        client.sendToClient(
+                                new UnknownUserManipulator()
+                                        .instantiate(request)
+                                        .createAccountHandler(request));
+                        break;
+                    }
+
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();

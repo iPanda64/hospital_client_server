@@ -1,8 +1,6 @@
 package controller;
 
-import controller.handler.ChatResponseHandler;
-import controller.handler.LoginResponseHandler;
-import controller.handler.ResponseHandler;
+import controller.handler.*;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -29,6 +27,8 @@ public class ClientController implements MessageHandler {
         this.responseHandlers = new HashMap<>();
         responseHandlers.put(UseCaseType.Login, new LoginResponseHandler(this));
         responseHandlers.put(UseCaseType.Chat, new ChatResponseHandler(this));
+        responseHandlers.put(UseCaseType.ViewAccount, new ViewAccountResponseHandler(this));
+        responseHandlers.put(UseCaseType.CreateAccount, new CreateAccountHandler(this));
 
 
 
@@ -49,6 +49,9 @@ public class ClientController implements MessageHandler {
                 break;
             case CHAT:
                 Platform.runLater(() -> setView(new ChatController(this, client)));
+                break;
+            case VIEW_ACCOUNT:
+                Platform.runLater(() -> setView(new ViewAccountController(this, client)));
                 break;
             case CREATE_ACCOUNT:
                 Platform.runLater(() -> setView(new CreateAccountController(this, client)));
@@ -90,6 +93,15 @@ public class ClientController implements MessageHandler {
         Platform.runLater(() -> {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.showAndWait();
+        });
+    }
+    public void showSuccess(String message) {
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
             alert.setHeaderText(null);
             alert.setContentText(message);
             alert.showAndWait();

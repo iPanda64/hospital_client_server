@@ -1,7 +1,9 @@
 package controller.handler;
 
 import controller.ClientController;
+import controller.ViewAccountController;
 import model.Response;
+import model.UtilizatorType;
 import model.ViewType;
 
 public class LoginResponseHandler implements ResponseHandler {
@@ -13,7 +15,12 @@ public class LoginResponseHandler implements ResponseHandler {
 
     @Override
     public void handle(Response<?> response) {
-        System.out.println(response.getId());
-        clientController.switchView(ViewType.CHAT);
+        if(!response.isSuccessful()){
+            clientController.showError("Username or password incorrect");
+            return;
+        }
+        ClientController.setCurrentId(response.getId());
+        ViewAccountController.setUtilizatorTip((UtilizatorType)response.getResponseObject());
+        clientController.switchView(ViewType.VIEW_ACCOUNT);
     }
 }

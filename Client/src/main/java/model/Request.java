@@ -1,5 +1,7 @@
 package model;
 
+import controller.ClientController;
+
 import java.io.Serializable;
 
 public class Request implements Serializable {
@@ -21,7 +23,7 @@ public class Request implements Serializable {
 
     // Constructor for simpler requests, if needed
     public Request(UseCaseType useCaseType, Object payload) {
-        this(UtilizatorType.Unknown, useCaseType, null, 0, payload);
+        this(UtilizatorType.Unknown, useCaseType, null, ClientController.getCurrentId(), payload);
     }
 
     public UtilizatorType getUtilizatorType() {
