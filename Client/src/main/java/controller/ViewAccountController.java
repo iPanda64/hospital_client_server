@@ -15,7 +15,7 @@ public class ViewAccountController extends BaseViewController{
     public ViewAccountController(ClientController clientController, Client client) {
         super(clientController, client, "viewAccount.html");
         this.client = client;
-        getAccount();
+        onPageLoadFinished(this::getAccount);
     }
     public void getAccount() {
         try {
@@ -31,18 +31,22 @@ public class ViewAccountController extends BaseViewController{
     }
     public void previous(){
         // todo
+        if(utilizatorTip==UtilizatorType.administrator){
+            clientController.switchView(ViewType.ADMIN);
+        }
+        else clientController.switchView(ViewType.LOGIN);
     }
     public void next(){
         // todo
         if(utilizatorTip==UtilizatorType.administrator){
-            clientController.switchView(ViewType.CHAT);
+            clientController.switchView(ViewType.ADMIN);
         }
         else clientController.switchView(ViewType.LOGIN);
     }
     public void setAccount(String account) {
         Platform.runLater(() -> {
             String cleanMessage = account.replace("\\", "\\\\")
-                    .replace("'", "\'" )
+                    .replace("'", "'" )
                     .replace("\n", " ")
                     .replace("\r", " ");
             System.out.println(cleanMessage);
@@ -53,3 +57,4 @@ public class ViewAccountController extends BaseViewController{
         ViewAccountController.utilizatorTip = utilizatorTip;
     }
 }
+

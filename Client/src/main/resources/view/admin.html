@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>User Management</h1>
+        <button class="btn btn-primary" onclick="openModal()">+ Add New User</button>
+    </header>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Parola</th>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Numar_Telefon</th>
+                <th>Email</th>
+                <th>Data_Nasterii</th>
+                <th>Tip</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            </tbody>
+    </table>
+</div>
+
+    <div id="nav-bar">
+        <button id="btn-prev" class="nav-btn" onclick="previous()">« Previous</button>
+        <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
+    </div>
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title" id="modalTitle">Add User</h2>
+        
+<form id="userForm" onsubmit="handleFormSubmit(event)">
+    <input type="hidden" id="userId">
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Parola</label>
+            <input type="password" id="password" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="nume">Nume</label>
+            <input type="text" id="nume" required>
+        </div>
+        <div class="form-group">
+            <label for="prenume">Prenume</label>
+            <input type="text" id="prenume" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="telefon">Numar Telefon</label>
+        <input type="tel" id="telefon" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="dataNasterii">Data Nasterii</label>
+        <input type="date" id="dataNasterii" required>
+    </div>
+
+    <div class="form-group" id="tip-form-group">
+        <label for="tip">Tip</label>
+        <select id="tip" required>
+            <option value="doctor">Doctor</option>
+            <option value="pacient">Pacient</option>
+            <option value="asistent">Asistent</option>
+            <option value="administrator">Administrator</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Save User</button>
+</form>
+    </div>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

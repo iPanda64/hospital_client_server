@@ -161,6 +161,31 @@ public class UtilizatorRepository {
 
         return null;
     }
+    public List<Utilizator> SearchAllUtilizator() {
+        List<Utilizator> utilizatori = new ArrayList<>();
+
+        String sql = "SELECT * FROM utilizator";
+        Statement statement = null;
+        ResultSet rs = null;
+
+        try {
+
+            Connection connection = repository.getConnection();
+            statement = connection.createStatement();
+            rs = statement.executeQuery(sql);
+
+            while (rs.next()) {
+                utilizatori.add(mapResultSetToUtilizator(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            repository.closeResultSet(rs);
+            repository.closeStatement(statement);
+            repository.closeConnection();
+        }
+        return utilizatori;
+    }
     public List<Utilizator> SearchAllPacients() {
         List<Utilizator> pacienti = new ArrayList<>();
 

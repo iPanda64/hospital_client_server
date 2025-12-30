@@ -29,6 +29,10 @@ public class ClientController implements MessageHandler {
         responseHandlers.put(UseCaseType.Chat, new ChatResponseHandler(this));
         responseHandlers.put(UseCaseType.ViewAccount, new ViewAccountResponseHandler(this));
         responseHandlers.put(UseCaseType.CreateAccount, new CreateAccountHandler(this));
+        responseHandlers.put(UseCaseType.AdminViewAllAccounts, new AdminCrudResponseHandler(this));
+        responseHandlers.put(UseCaseType.AdminDeleteUser, new AdminCrudResponseHandler(this));
+        responseHandlers.put(UseCaseType.AdminAddUser, new AdminCrudResponseHandler(this));
+        responseHandlers.put(UseCaseType.AdminEditUser, new AdminCrudResponseHandler(this));
 
 
 
@@ -55,6 +59,9 @@ public class ClientController implements MessageHandler {
                 break;
             case CREATE_ACCOUNT:
                 Platform.runLater(() -> setView(new CreateAccountController(this, client)));
+                break;
+            case ADMIN:
+                Platform.runLater(() -> setView(new AdminCRUDController(this, client)));
                 break;
         }
     }

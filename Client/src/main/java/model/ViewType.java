@@ -5,4 +5,5 @@ public enum ViewType {
     CHAT,
     CREATE_ACCOUNT,
     VIEW_ACCOUNT,
+    ADMIN,
 }

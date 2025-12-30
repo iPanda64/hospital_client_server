@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.concurrent.Worker;
 import javafx.scene.Parent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -21,11 +22,9 @@ public class BaseViewController {
         this.webEngine = webView.getEngine();
         this.webEngine.setJavaScriptEnabled(true);
 
-        this.webEngine.getLoadWorker().stateProperty().addListener((obs, oldState, newState) -> {
-            if (newState == javafx.concurrent.Worker.State.SUCCEEDED) {
-                JSObject jsObject = (JSObject) webEngine.executeScript("window");
-                jsObject.setMember("javaBridge", getBridgeObject());
-            }
+        onPageLoadFinished(() -> {
+            JSObject jsObject = (JSObject) webEngine.executeScript("window");
+            jsObject.setMember("javaBridge", getBridgeObject());
         });
 
         URL url = getClass().getResource("/view/" + htmlFile);
@@ -34,6 +33,14 @@ public class BaseViewController {
         } else {
             webEngine.loadContent("<html><body><h1>Error: Resource not found: /view/" + htmlFile + "</h1></body></html>");
         }
+    }
+
+    protected void onPageLoadFinished(Runnable action) {
+        webEngine.getLoadWorker().stateProperty().addListener((obs, oldState, newState) -> {
+            if (newState == Worker.State.SUCCEEDED) {
+                action.run();
+            }
+        });
     }
 
     public Parent getView() {

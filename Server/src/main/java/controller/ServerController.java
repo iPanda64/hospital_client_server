@@ -56,7 +56,34 @@ public class ServerController {
                                         .createAccountHandler(request));
                         break;
                     }
-
+                    case AdminViewAllAccounts:{
+                        client.sendToClient(
+                                new AdminManipulator()
+                                        .instantiate(request)
+                                        .viewAllAccountsHandler(request));
+                        break;
+                    }
+                    case AdminDeleteUser:{
+                        client.sendToClient(
+                                new AdminManipulator()
+                                        .instantiate(request)
+                                        .deleteHandler(request));
+                        break;
+                    }
+                    case AdminAddUser:{
+                        client.sendToClient(
+                                new AdminManipulator()
+                                        .instantiate(request)
+                                        .createAccountHandler(request));
+                        break;
+                    }
+                    case AdminEditUser:{
+                        client.sendToClient(
+                                new AdminManipulator()
+                                        .instantiate(request)
+                                        .updateAccountHandler(request));
+                        break;
+                    }
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();

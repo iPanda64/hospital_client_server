@@ -5,6 +5,10 @@ public enum UseCaseType {
     Chat,
     CreateAccount,
     ViewAccount,
+    AdminViewAllAccounts,
+    AdminDeleteUser,
+    AdminAddUser,
+    AdminEditUser,
 
     // Add more use cases later
 }
