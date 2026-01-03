@@ -9,6 +9,6 @@ public enum UseCaseType {
     AdminDeleteUser,
     AdminAddUser,
     AdminEditUser,
-
+    PacientViewFacturi,
     // Add more use cases later
 }

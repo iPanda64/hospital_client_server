@@ -6,4 +6,5 @@ public enum ViewType {
     CREATE_ACCOUNT,
     VIEW_ACCOUNT,
     ADMIN,
+    VIEW_FACTURI,
 }

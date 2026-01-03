@@ -9,5 +9,6 @@ public enum UseCaseType {
     AdminDeleteUser,
     AdminAddUser,
     AdminEditUser,
+    PacientViewFacturi,
 
 }

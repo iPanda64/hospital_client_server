@@ -33,6 +33,7 @@ public class ClientController implements MessageHandler {
         responseHandlers.put(UseCaseType.AdminDeleteUser, new AdminCrudResponseHandler(this));
         responseHandlers.put(UseCaseType.AdminAddUser, new AdminCrudResponseHandler(this));
         responseHandlers.put(UseCaseType.AdminEditUser, new AdminCrudResponseHandler(this));
+        responseHandlers.put(UseCaseType.PacientViewFacturi, new ViewFacturiResponseHandler(this));
 
 
 
@@ -62,6 +63,9 @@ public class ClientController implements MessageHandler {
                 break;
             case ADMIN:
                 Platform.runLater(() -> setView(new AdminCRUDController(this, client)));
+                break;
+            case VIEW_FACTURI:
+                Platform.runLater(() -> setView(new ViewFacturiController(this, client)));
                 break;
         }
     }

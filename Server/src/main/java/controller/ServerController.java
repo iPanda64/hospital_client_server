@@ -84,6 +84,13 @@ public class ServerController {
                                         .updateAccountHandler(request));
                         break;
                     }
+                    case PacientViewFacturi:{
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .viewFacturiHandler(request));
+                        break;
+                    }
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();
