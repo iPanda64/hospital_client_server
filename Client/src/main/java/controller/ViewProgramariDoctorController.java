@@ -3,6 +3,7 @@ package controller;
 import javafx.application.Platform;
 import model.Request;
 import model.UseCaseType;
+import model.ViewType;
 
 import java.io.IOException;
 import java.util.List;
@@ -44,5 +45,13 @@ public class ViewProgramariDoctorController extends BaseViewController {
         Platform.runLater(() -> {
             webEngine.executeScript(String.format("setProgramari('%s');", json));
         });
+    }
+
+    public void previous() {
+        clientController.switchView(ViewType.VIEW_ACCOUNT);
+    }
+
+    public void next() {
+        clientController.switchView(ViewType.VIEW_DATE_PERSONALE_PACIENT_DOC);
     }
 }

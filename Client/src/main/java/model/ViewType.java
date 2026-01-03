@@ -8,4 +8,5 @@ public enum ViewType {
     ADMIN,
     VIEW_FACTURI,
     VIEW_PROGRAMARI_DOCTOR,
+    VIEW_DATE_PERSONALE_PACIENT_DOC,
 }

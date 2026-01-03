@@ -11,5 +11,6 @@ public enum UseCaseType {
     AdminEditUser,
     PacientViewFacturi,
     DoctorViewProgramari,
+    DoctorViewDatePersonalePacient,
     // Add more use cases later
 }

@@ -98,6 +98,13 @@ public class ServerController {
                                         .viewProgramariHandler(request));
                         break;
                     }
+                    case DoctorViewDatePersonalePacient: {
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .viewDatePersonalePacienti(request));
+                        break;
+                    }
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();

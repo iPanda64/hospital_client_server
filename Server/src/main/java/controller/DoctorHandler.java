@@ -17,7 +17,18 @@ public class DoctorHandler extends AbstractHandler {
         super(request);
     }
     public Response viewDatePersonalePacienti(Request request) {
-        return null;
+        Response response = null;
+        try {
+            UtilizatorRepository utilizatorRepository = new UtilizatorRepository(new Repository());
+            List<Utilizator> pacienti = utilizatorRepository.SearchAllPacients();
+            pacienti.forEach(u -> u.setParola(null));
+
+            response = new Response(request, request.getId(), pacienti, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response = new Response(request, -1, null, false);
+        }
+        return response;
     }
 
     public Response viewFisaMedicalaPacientHandler(Request request) {

@@ -35,6 +35,7 @@ public class ClientController implements MessageHandler {
         responseHandlers.put(UseCaseType.AdminEditUser, new AdminCrudResponseHandler(this));
         responseHandlers.put(UseCaseType.PacientViewFacturi, new ViewFacturiResponseHandler(this));
         responseHandlers.put(UseCaseType.DoctorViewProgramari, new ViewProgramariDoctorResponseHandler (this));
+        responseHandlers.put(UseCaseType.DoctorViewDatePersonalePacient, new ViewDatePersonalePacientDocResponseHandler(this));
 
 
 
@@ -70,6 +71,9 @@ public class ClientController implements MessageHandler {
                 break;
             case VIEW_PROGRAMARI_DOCTOR:
                 Platform.runLater(() -> setView(new ViewProgramariDoctorController(this, client)));
+                break;
+            case VIEW_DATE_PERSONALE_PACIENT_DOC:
+                Platform.runLater(() -> setView(new ViewDatePersonalePacientDocController(this, client)));
                 break;
         }
     }
