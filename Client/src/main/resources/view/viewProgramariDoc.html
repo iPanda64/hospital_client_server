@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programari</title>
+    <link rel="stylesheet" href="viewFacturi.css">
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+<div class="container">
+    <h1>Programarile mele</h1>
+    <table id="programariTable">
+        <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Data Emitere</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="programariTableBody">
+        </tbody>
+    </table>
+    <div id="nav-bar">
+        <button id="btn-prev" class="nav-btn" onclick="previous()">« Previous</button>
+        <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
+    </div>
+</div>
+<script src="viewProgramariDoc.js"></script>
+</body>
+</html>

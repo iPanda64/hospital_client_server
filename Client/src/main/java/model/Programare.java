@@ -7,13 +7,13 @@ public class Programare implements Serializable {
     private int id;
     private int id_doctor;
     private int id_pacient;
-    private LocalDate data_programarii;
+    private LocalDate data_programare;
     private StatusProgramare status;
 
     public Programare(int id_doctor, int id_pacient, LocalDate data_programarii, StatusProgramare status) {
         this.id_doctor = id_doctor;
         this.id_pacient = id_pacient;
-        this.data_programarii = data_programarii;
+        this.data_programare = data_programarii;
         this.status = status;
     }
     public Programare(int id,int id_doctor, int id_pacient, LocalDate data_programarii, StatusProgramare status) {
@@ -46,11 +46,11 @@ public class Programare implements Serializable {
     }
 
     public LocalDate getData_programarii() {
-        return data_programarii;
+        return data_programare;
     }
 
     public void setData_programarii(LocalDate data_programarii) {
-        this.data_programarii = data_programarii;
+        this.data_programare = data_programarii;
     }
 
     public StatusProgramare getStatus() {

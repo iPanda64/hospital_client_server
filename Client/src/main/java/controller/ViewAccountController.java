@@ -42,6 +42,8 @@ public class ViewAccountController extends BaseViewController{
             clientController.switchView(ViewType.ADMIN);
         }else if(utilizatorTip==UtilizatorType.pacient){
             clientController.switchView(ViewType.VIEW_FACTURI);
+        }else if(utilizatorTip==UtilizatorType.doctor){
+            clientController.switchView(ViewType.VIEW_PROGRAMARI_DOCTOR);
         }
         else clientController.switchView(ViewType.LOGIN);
     }

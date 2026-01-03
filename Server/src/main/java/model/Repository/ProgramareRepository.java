@@ -58,6 +58,30 @@ public class ProgramareRepository {
         return programari;
     }
 
+    public List<Programare> findByDoctorId(Long id) {
+        List<Programare> programari = new ArrayList<>();
+        String sql = "SELECT * FROM programare WHERE id_doctor = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            Connection connection = repository.getConnection();
+            statement = connection.prepareStatement(sql);
+            statement.setLong(1, id);
+            resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                programari.add(mapResultSetToProgramare(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            repository.closeResultSet(resultSet);
+            repository.closeStatement(statement);
+            repository.closeConnection();
+        }
+        return programari;
+    }
     public List<Programare> findByPacientId(Long id) {
         List<Programare> programari = new ArrayList<>();
         String sql = "SELECT * FROM programare WHERE id_pacient = ?";
@@ -127,8 +151,8 @@ public class ProgramareRepository {
         int id = rs.getInt("id");
         int id_doctor = rs.getInt("id_doctor");
         int id_pacient = rs.getInt("id_pacient");
-        LocalDate data = rs.getDate("data_programarii").toLocalDate();
-        StatusProgramare status = StatusProgramare.valueOf(rs.getString("status"));
+        LocalDate data = rs.getDate("data_programare").toLocalDate();
+        StatusProgramare status = StatusProgramare.fromString(rs.getString("status"));
 
         return new Programare(id, id_doctor, id_pacient, data, status);
     }

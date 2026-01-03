@@ -91,6 +91,13 @@ public class ServerController {
                                         .viewFacturiHandler(request));
                         break;
                     }
+                    case DoctorViewProgramari:{
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .viewProgramariHandler(request));
+                        break;
+                    }
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();
