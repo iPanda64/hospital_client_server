@@ -90,6 +90,41 @@ public class ServerController {
                         System.out.println("Chat message: " + chatMessage);
                         this.server.sendToAllClients(new Response<>(request, request.getId(), chatMessage, true)); // Echo as a Response
                         break;
+                    case PacientViewProgramari: {
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .viewProgramariHandler(request));
+                        break;
+                    }
+                    case PacientCreateProgramare: {
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .createProgramareHandler(request));
+                        break;
+                    }
+                    case PacientViewHistory: {
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .viewMedicalHistoryHandler(request));
+                        break;
+                    }
+                    case PacientViewFacturi: {
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .viewFacturiHandler(request));
+                        break;
+                    }
+                    case PacientGetResults: {
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .getConsultatieResults(request));
+                        break;
+                    }
                     default:
                         System.out.println("Unknown UseCaseType: " + request.getUseCaseType());
                         client.sendToClient(new Response<>(request, request.getId(), "Unknown UseCaseType", false)); // Send Response
