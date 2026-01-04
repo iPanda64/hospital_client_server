@@ -33,7 +33,10 @@ public class ClientController implements MessageHandler {
         responseHandlers.put(UseCaseType.AdminDeleteUser, new AdminCrudResponseHandler(this));
         responseHandlers.put(UseCaseType.AdminAddUser, new AdminCrudResponseHandler(this));
         responseHandlers.put(UseCaseType.AdminEditUser, new AdminCrudResponseHandler(this));
-
+        responseHandlers.put(UseCaseType.PacientViewProgramari, new PacientResponseHandler(this));
+        responseHandlers.put(UseCaseType.PacientCreateProgramare, new PacientResponseHandler(this));
+        responseHandlers.put(UseCaseType.PacientViewHistory, new PacientResponseHandler(this));
+        responseHandlers.put(UseCaseType.PacientViewFacturi, new PacientResponseHandler(this));
 
 
         try {
@@ -62,6 +65,9 @@ public class ClientController implements MessageHandler {
                 break;
             case ADMIN:
                 Platform.runLater(() -> setView(new AdminCRUDController(this, client)));
+                break;
+            case PACIENT:
+                Platform.runLater(() -> setView(new PacientController(this, client)));
                 break;
         }
     }

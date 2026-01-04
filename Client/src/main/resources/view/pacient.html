@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pacient.css">
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Programarile Mele</h1>
+        <button class="btn btn-primary" onclick="openModal()">+ Programare Nouă</button>
+    </header>
+
+    <table id="appointmentsTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="appointmentsBody">
+        </tbody>
+    </table>
+</div>
+
+<div id="appModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Solicita o Programare</h2>
+        <form id="appForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+                <label for="dataProg">Data dorită</label>
+                <input type="date" id="dataProg" required>
+            </div>
+            <div class="form-group">
+                <label for="idDoctor">ID Doctor (Ex: 1)</label>
+                <input type="number" id="idDoctor" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Trimite Solicitarea</button>
+        </form>
+    </div>
+</div>
+
+<script src="pacient.js"></script>
+</body>
+</html>
