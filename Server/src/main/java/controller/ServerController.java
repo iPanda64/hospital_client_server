@@ -84,6 +84,27 @@ public class ServerController {
                                         .updateAccountHandler(request));
                         break;
                     }
+                    case PacientViewFacturi:{
+                        client.sendToClient(
+                                new PacientManipulator()
+                                        .instantiate(request)
+                                        .viewFacturiHandler(request));
+                        break;
+                    }
+                    case DoctorViewProgramari:{
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .viewProgramariHandler(request));
+                        break;
+                    }
+                    case DoctorViewDatePersonalePacient: {
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .viewDatePersonalePacienti(request));
+                        break;
+                    }
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();
@@ -109,13 +130,6 @@ public class ServerController {
                                 new PacientManipulator()
                                         .instantiate(request)
                                         .viewMedicalHistoryHandler(request));
-                        break;
-                    }
-                    case PacientViewFacturi: {
-                        client.sendToClient(
-                                new PacientManipulator()
-                                        .instantiate(request)
-                                        .viewFacturiHandler(request));
                         break;
                     }
                     case PacientGetResults: {

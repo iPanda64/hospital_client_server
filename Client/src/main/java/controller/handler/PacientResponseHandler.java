@@ -39,6 +39,7 @@ public class PacientResponseHandler implements ResponseHandler {
                 break;
             case PacientCreateProgramare:
                 List<Programare> listaNoua = (List<Programare>) response.getResponseObject();
+                System.out.println(listaNoua);
                 pacientController.setProgramari(listaNoua);
                 clientController.showSuccess("Programarea a fost creată cu succes!");
                 break;

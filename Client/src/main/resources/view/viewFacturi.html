@@ -1,0 +1,40 @@
+<!DOCTYPE html<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OCSF Client</title>
+    <link rel="stylesheet" href="viewFacturi.css" />
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div>
+            <h1>Facturi</h1>
+        </div>
+
+        <div class="info-box">
+            <table id="facturiTable">
+                <thead>
+                    <tr>
+                        <th>ID <br>Factura</th>
+                        <th>ID <br>Consultatie</th>
+                        <th>Data Emitere</th>
+                        <th>Suma</th>
+                    </tr>
+                </thead>
+                <tbody id="facturiTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="nav-bar">
+        <button id="btn-prev" class="nav-btn" onclick="previous()">« Previous</button>
+        <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
+    </div>
+    
+    <script src="viewFacturi.js"></script>
+</body>
+</html>

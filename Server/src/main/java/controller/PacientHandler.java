@@ -1,5 +1,7 @@
 package controller;
 
+import model.Factura;
+import model.Repository.FacturaRepository;
 import model.Request;
 import model.Response;
 import model.Repository.*;
@@ -18,11 +20,17 @@ public class PacientHandler extends AbstractHandler {
     }
 
     public Response viewFacturiHandler(Request request) {
+        Response response = null;
         try {
-            return new Response(request, request.getId(), null, true);
+            int id = request.getId();
+            FacturaRepository fr=new FacturaRepository();
+            List<Factura>facturi=fr.getFacturiByPacient(id);
+            response=new Response(request,id,facturi,true);
         } catch (Exception e) {
-            return new Response(request, -1, null, false);
+            e.printStackTrace();
+            response=new Response(request,-1,null,false);
         }
+        return response;
     }
 
     public Response createProgramareHandler(Request request) {
@@ -31,7 +39,7 @@ public class PacientHandler extends AbstractHandler {
         try {
             Programare p = (Programare) request.getPayload();
             pr.salvare(p);
-            programari = pr.findByPacientId((long) p.getId());
+            programari = pr.findByPacientId((long) p.getId_pacient());
         } catch (Exception e) {
             return new Response(request, -1, null, false);
         }

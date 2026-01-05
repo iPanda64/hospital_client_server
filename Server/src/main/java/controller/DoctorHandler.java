@@ -1,14 +1,34 @@
 package controller;
 
+import model.Programare;
+import model.Repository.ProgramareRepository;
+import model.Repository.Repository;
+import model.Repository.UtilizatorRepository;
 import model.Request;
 import model.Response;
+import model.Utilizator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DoctorHandler extends AbstractHandler {
     public DoctorHandler(Request request) {
         super(request);
     }
     public Response viewDatePersonalePacienti(Request request) {
-        return null;
+        Response response = null;
+        try {
+            UtilizatorRepository utilizatorRepository = new UtilizatorRepository(new Repository());
+            List<Utilizator> pacienti = utilizatorRepository.SearchAllPacients();
+            pacienti.forEach(u -> u.setParola(null));
+
+            response = new Response(request, request.getId(), pacienti, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response = new Response(request, -1, null, false);
+        }
+        return response;
     }
 
     public Response viewFisaMedicalaPacientHandler(Request request) {
@@ -16,7 +36,30 @@ public class DoctorHandler extends AbstractHandler {
     }
 
     public Response viewProgramariHandler(Request request) {
-        return null;
+        Response response=null;
+        List<Programare>programari=null;
+        try {
+            ProgramareRepository programareRepository = new ProgramareRepository();
+            UtilizatorRepository utilizatorRepository=new UtilizatorRepository(new Repository());
+            int id = request.getId();
+            programari=programareRepository.findByDoctorId( Long.valueOf(id));
+            List<String> result=new ArrayList<>();
+            for (Programare programare : programari) {
+                int pacient_id = programare.getId_pacient();
+                Utilizator utilizator = utilizatorRepository.findById(pacient_id);
+                if (utilizator != null) {
+                    result.add(utilizator.getNume()+" "+
+                            utilizator.getPrenume()+" "+
+                            programare.getData_programarii()+" "+
+                            programare.getStatus());
+                }
+            }
+            response=new Response(request,id,result,true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response=new Response(request,-1,null,false);
+        }
+        return response;
     }
 
     public Response createPrescriptiePacientiHandler(Request request) {

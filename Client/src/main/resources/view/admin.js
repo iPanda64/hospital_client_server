@@ -147,7 +147,7 @@ function  next(){
     javaBridge.next();
 }
 
-function  next(){
-    javaBridge.next();
+function  previous(){
+    javaBridge.previous();
 }
 renderTable();
