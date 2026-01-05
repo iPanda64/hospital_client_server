@@ -1,4 +1,6 @@
-const tableBody = document.getElementById('appointmentsBody');
+const appointmentsBody = document.getElementById('appointmentsBody');
+const historyBody = document.getElementById('historyBody');
+const facturiBody = document.getElementById('facturiBody');
 const modal = document.getElementById('appModal');
 
 window.onload = () => {
@@ -7,7 +9,7 @@ window.onload = () => {
 
 function displayProgramari(jsonJson) {
     const apps = JSON.parse(jsonJson);
-    tableBody.innerHTML = '';
+    appointmentsBody.innerHTML = '';
     apps.forEach(app => {
         const row = `
             <tr>
@@ -16,8 +18,50 @@ function displayProgramari(jsonJson) {
                 <td><span class="status-badge">${app.status}</span></td>
             </tr>
         `;
-        tableBody.innerHTML += row;
+        appointmentsBody.innerHTML += row;
     });
+}
+
+function displayHistory(jsonJson) {
+    const history = JSON.parse(jsonJson);
+    historyBody.innerHTML = '';
+    history.forEach(h => {
+        const row = `
+            <tr>
+                <td>${h.id}</td>
+                <td>${h.data}</td>
+                <td><strong>${h.diagnostic}</strong></td>
+            </tr>
+        `;
+        historyBody.innerHTML += row;
+    });
+}
+
+function displayFacturi(jsonJson) {
+    const facturi = JSON.parse(jsonJson);
+    facturiBody.innerHTML = '';
+    facturi.forEach(f => {
+        const statusPlata = f.platita ? '<span style="color: green;">Platita</span>' : '<span style="color: red;">Neplatita</span>';
+        const row = `
+            <tr>
+                <td>${f.id}</td>
+                <td>${f.suma} RON</td>
+                <td>${statusPlata}</td>
+            </tr>
+        `;
+        facturiBody.innerHTML += row;
+    });
+}
+function showSection(sectionId) {
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById('section-' + sectionId).style.display = 'block';
+    const titles = { 'programari': 'Programarile Mele', 'istoric': 'Istoric Medical', 'facturi': 'Facturi și Plati' };
+    document.getElementById('mainTitle').innerText = titles[sectionId];
+    if (sectionId === 'programari') javaBridge.getProgramari();
+    if (sectionId === 'istoric') javaBridge.getHistory();
+    if (sectionId === 'facturi') javaBridge.getFacturi();
 }
 
 function openModal() { modal.style.display = 'flex'; }
@@ -27,9 +71,8 @@ function handleFormSubmit(e) {
     e.preventDefault();
     const data = document.getElementById('dataProg').value;
     const docId = document.getElementById('idDoctor').value;
-    javaBridge.createProgramare(data, parseInt(docId)); //pt creare programare
+
+    javaBridge.createProgramare(data, parseInt(docId));
 
     closeModal();
-}
-
-window.onclick = (event) => { if (event.target == modal) closeModal(); }
+}window.onclick = (event) => { if (event.target == modal) closeModal(); }

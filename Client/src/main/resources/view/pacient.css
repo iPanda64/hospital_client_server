@@ -21,3 +21,45 @@ th { background-color: #f8f9fa; }
 .form-group { margin-bottom: 15px; }
 .form-group label { display: block; margin-bottom: 5px; }
 .form-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.btn-tab {
+    background-color: #dcdde1;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+.btn-tab:hover {
+    background-color: #bdc3c7;
+}
+
+/* cnad e btn activ*/
+.btn-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/**/
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f1f2f6;
+    color: #7f8c8d;
+}
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+.content-section {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

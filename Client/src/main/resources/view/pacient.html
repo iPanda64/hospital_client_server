@@ -2,44 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Pacient Interfata</title>
     <link rel="stylesheet" href="pacient.css">
     <link rel="stylesheet" href="navigation.css">
 </head>
 <body>
-
 <div class="container">
     <header>
-        <h1>Programarile Mele</h1>
-        <button class="btn btn-primary" onclick="openModal()">+ Programare Nouă</button>
+        <h1 id="mainTitle">Programarile Mele</h1>
+        <div class="header-buttons">
+            <button class="btn btn-primary" onclick="openModal()">+ Programare Noua</button>
+            <button class="btn btn-edit" onclick="javaBridge.goToProfile()">Profilul Meu</button>
+        </div>
     </header>
 
-    <table id="appointmentsTable">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Data</th>
-            <th>Status</th>
-        </tr>
-        </thead>
-        <tbody id="appointmentsBody">
-        </tbody>
-    </table>
+    <div class="tabs" style="margin-bottom: 20px; display: flex; gap: 10px;">
+        <button class="btn btn-tab active" onclick="showSection('programari')">Programări</button>
+        <button class="btn btn-tab" onclick="showSection('istoric')">Istoric Medical</button>
+        <button class="btn btn-tab" onclick="showSection('facturi')">Facturi</button>
+    </div>
+
+    <div id="section-programari" class="content-section">
+        <table id="appointmentsTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="appointmentsBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="section-istoric" class="content-section" style="display:none;">
+        <table id="historyTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Diagnostic</th>
+            </tr>
+            </thead>
+            <tbody id="historyBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="section-facturi" class="content-section" style="display:none;">
+        <table id="facturiTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Suma</th>
+                <th>Status Plata</th>
+            </tr>
+            </thead>
+            <tbody id="facturiBody">
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div id="appModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Solicita o Programare</h2>
+        <h2>Solicita Programare</h2>
         <form id="appForm" onsubmit="handleFormSubmit(event)">
             <div class="form-group">
-                <label for="dataProg">Data dorită</label>
+                <label for="dataProg">Data dorita</label>
                 <input type="date" id="dataProg" required>
             </div>
             <div class="form-group">
                 <label for="idDoctor">ID Doctor (Ex: 1)</label>
                 <input type="number" id="idDoctor" required>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Trimite Solicitarea</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Trimite Solicitarea</button>
         </form>
     </div>
 </div>
@@ -47,3 +86,4 @@
 <script src="pacient.js"></script>
 </body>
 </html>
+
