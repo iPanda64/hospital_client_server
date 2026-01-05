@@ -1,0 +1,39 @@
+:root {
+    --primary-color: #3498db;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --secondary-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --border-radius: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+body { background-color: var(--secondary-color); color: var(--text-color); padding: 20px; }
+.container { background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.btn { padding: 10px 18px; border: none; border-radius: var(--border-radius); cursor: pointer; font-weight: 600; }
+.btn-primary { background-color: var(--primary-color); color: white; }
+
+.tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.btn-tab { background-color: #dcdde1; color: var(--text-color); }
+.btn-tab.active { background-color: var(--primary-color); color: white; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+th { background-color: #f8f9fa; }
+
+.status-badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+.status-aprobata { background-color: #d4edda; color: #155724; }
+.status-in_asteptare { background-color: #fff3cd; color: #856404; }
+
+.btn-action { padding: 5px 10px; margin-right: 5px; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; font-size: 0.85rem; }
+.btn-approve { background-color: var(--success-color); color: white; border: none; }
+.btn-delete { background-color: var(--danger-color); color: white; border: none; }
+
+.modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.modal-content { background: white; padding: 30px; border-radius: var(--border-radius); width: 400px; position: relative; }
+.close { position: absolute; top: 15px; right: 20px; cursor: pointer; font-size: 1.5rem; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; }
+.form-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }

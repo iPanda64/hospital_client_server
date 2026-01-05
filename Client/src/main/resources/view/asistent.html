@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interfata Asistent</title>
+  <link rel="stylesheet" href="asistent.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1 id="mainTitle">Gestiune Programari</h1>
+    <div class="header-buttons">
+      <button class="btn btn-primary" onclick="openModal()">+ Programare Noua</button>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button id="tab-programari" class="btn btn-tab active" onclick="showSection('programari')">Toate Programarile</button>
+    <button id="tab-pacienti" class="btn btn-tab" onclick="showSection('pacienti')">Lista Pacienti</button>
+  </div>
+
+  <div id="section-programari" class="content-section">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID Pacient</th>
+        <th>Data</th>
+        <th>Status</th>
+        <th>Acțiuni</th>
+      </tr>
+      </thead>
+      <tbody id="programariBody"></tbody>
+    </table>
+  </div>
+
+  <div id="section-pacienti" class="content-section" style="display:none;">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nume</th>
+        <th>Prenume</th>
+        <th>Telefon</th>
+      </tr>
+      </thead>
+      <tbody id="pacientiBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div id="appModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Creare Programare</h2>
+    <form id="appForm" onsubmit="handleFormSubmit(event)">
+      <div class="form-group">
+        <label for="idPacient">ID Pacient</label>
+        <input type="number" id="idPacient" required>
+      </div>
+      <div class="form-group">
+        <label for="idDoctor">ID Doctor</label>
+        <input type="number" id="idDoctor" required>
+      </div>
+      <div class="form-group">
+        <label for="dataProg">Data</label>
+        <input type="date" id="dataProg" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Salveaza</button>
+    </form>
+  </div>
+</div>
+
+<script src="asistent.js"></script>
+</body>
+</html>
