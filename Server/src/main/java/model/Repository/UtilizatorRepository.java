@@ -211,6 +211,30 @@ public class UtilizatorRepository {
         }
         return pacienti;
     }
+    public List<Utilizator> SearchByTip(UtilizatorType tip) {
+        List<Utilizator> rezultate = new ArrayList<>();
+        String sql = "SELECT * FROM utilizator WHERE tip = ?";
+
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+
+        try {
+            Connection connection = repository.getConnection();
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, tip.name());
+            rs = statement.executeQuery();
+            while (rs.next()) {
+                rezultate.add(mapResultSetToUtilizator(rs));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            repository.closeResultSet(rs);
+            repository.closeStatement(statement);
+            repository.closeConnection();
+        }
+        return rezultate;
+    }
     private Utilizator mapResultSetToUtilizator(ResultSet rs) throws SQLException {
         return new Utilizator(
                 rs.getInt("id"),

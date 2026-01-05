@@ -139,6 +139,58 @@ public class ServerController {
                                         .getConsultatieResults(request));
                         break;
                     }
+                    case AsistentViewPacienti: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .viewListaPacientiHandler(request));
+                        break;
+                    }
+                    case AsistentViewProgramari: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .viewProgramariPacientiHandler(request));
+                        break;
+                    }
+                    case AsistentCreareProgramare: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .createProgramarePacientiHandler(request));
+                        break;
+                    }
+                    case AsistentGestionareProgramari: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .approveProgramariPacientiHandler(request));
+                        break;
+                    }
+
+                    case AsistentStergeProgramare: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .deleteProgramariPacientiHandler(request));
+                        break;
+                    }
+
+                    case AsistentViewPrescriptii: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .viewPrescriptiePacientHandler(request));
+                        break;
+                    }
+
+                    case AsistentGetFacturaData: {
+                        client.sendToClient(
+                                new AsistentManipulator()
+                                        .instantiate(request)
+                                        .printFacturaConsultatieHandler(request));
+                        break;
+                    }
                     default:
                         System.out.println("Unknown UseCaseType: " + request.getUseCaseType());
                         client.sendToClient(new Response<>(request, request.getId(), "Unknown UseCaseType", false)); // Send Response

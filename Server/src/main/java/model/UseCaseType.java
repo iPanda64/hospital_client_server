@@ -17,4 +17,13 @@ public enum UseCaseType {
 
     DoctorViewProgramari,
     DoctorViewDatePersonalePacient,
+
+    AsistentViewPacienti,
+    AsistentViewProgramari,
+    AsistentGestionareProgramari, //pt respingere sau aprobare
+    AsistentStergeProgramare,
+    AsistentCreareProgramare,
+    AsistentViewPrescriptii,
+    AsistentGetFacturaData,
+
 }

@@ -13,7 +13,7 @@ public class FacturaRepository {
         repository = new Repository();
     }
     public boolean addFactura(Factura factura) {
-        String sql = "INSERT INTO facturi (id_consultatie, data_emitere, suma) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO factura (id_consultatie, data_emitere, suma) VALUES (?, ?, ?)";
         PreparedStatement statement = null;
         boolean success = false;
 
@@ -23,7 +23,7 @@ public class FacturaRepository {
 
             statement.setInt(1, factura.getId_consultatie());
             statement.setDate(2, Date.valueOf(factura.getData_emitere()));
-            statement.setInt(3, factura.getSuma());
+            statement.setDouble(3, factura.getSuma());
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -49,7 +49,7 @@ public class FacturaRepository {
 
             statement.setInt(1, factura.getId_consultatie());
             statement.setDate(2, java.sql.Date.valueOf(factura.getData_emitere()));
-            statement.setInt(3, factura.getSuma());
+            statement.setDouble(3, factura.getSuma());
 
             statement.setInt(4, factura.getId());
 
@@ -69,7 +69,7 @@ public class FacturaRepository {
     }
     public List<Factura> searchFacturaByCost(int cost) {
         List<Factura> listaFacturi = new ArrayList<>();
-        String sql = "SELECT * FROM facturi WHERE suma = ?";
+        String sql = "SELECT * FROM factura WHERE suma = ?";
 
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -88,7 +88,7 @@ public class FacturaRepository {
                 Date dbDate = resultSet.getDate("data_emitere");
                 LocalDate localDate = (dbDate != null) ? dbDate.toLocalDate() : null;
 
-                int suma = resultSet.getInt("suma");
+                double suma = resultSet.getDouble("suma");
                 Factura factura = new Factura(id, idConsultatie, localDate, suma);
 
                 listaFacturi.add(factura);
@@ -146,5 +146,35 @@ public class FacturaRepository {
         }
 
         return listaFacturi;
+    }
+    public Factura findByConsultatieId(int idConsultatie) {
+        String sql = "SELECT * FROM factura WHERE id_consultatie = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        Factura factura = null;
+
+        try {
+            Connection connection = repository.getConnection();
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, idConsultatie);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                int idConsult = resultSet.getInt("id_consultatie");
+                Date data = resultSet.getDate("data_emitere");
+                LocalDate localDate = (data != null) ? data.toLocalDate() : null;
+                int suma = resultSet.getInt("suma");
+                factura = new Factura(id, idConsult, localDate, suma);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            repository.closeResultSet(resultSet);
+            repository.closeStatement(statement);
+            repository.closeConnection();
+        }
+
+        return factura;
     }
 }
