@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fisa Medicala</title>
+    <link rel="stylesheet" href="viewFisaMedicalaPacientDoc.css">
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="panel" id="col-patients">
+        <h2>Pacienti</h2>
+        <ul id="list-patients" class="list-group">
+            </ul>
+    </div>
+
+    <div class="panel" id="col-fisa">
+        <h2>Istoric Consultatii</h2>
+        <ul id="list-consultations" class="list-group">
+            <li class="placeholder">Selectati un pacient din stanga.</li>
+        </ul>
+    </div>
+
+    <div class="panel" id="col-details">
+        <h2>Prescriptia Consultatiei</h2>
+        <div id="detail-content">
+            <p class="placeholder">Selectati o consultatie din mijloc.</p>
+        </div>
+    </div>
+
+</div>
+
+    <div id="nav-bar">
+        <button id="btn-prev" class="nav-btn" onclick="previous()">« Previous</button>
+        <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
+    </div>
+    
+
+<script src="viewFisaMedicalaPacientDoc.js"></script>
+</body>
+</html>

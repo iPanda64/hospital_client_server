@@ -1,14 +1,10 @@
 package controller;
 
-import model.Programare;
-import model.Repository.ProgramareRepository;
-import model.Repository.Repository;
-import model.Repository.UtilizatorRepository;
-import model.Request;
-import model.Response;
-import model.Utilizator;
+import model.*;
+import model.Repository.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,7 +28,28 @@ public class DoctorHandler extends AbstractHandler {
     }
 
     public Response viewFisaMedicalaPacientHandler(Request request) {
-        return null;
+        ConsultatieRepository cr = new ConsultatieRepository();
+        PrescriptieRepository pr = new PrescriptieRepository ();
+        UtilizatorRepository utilizatorRepository = new UtilizatorRepository(new Repository());
+        List<Consultatie> istoric;
+        try {
+            if(request.getAdditionalInfo().equals("pacient")){
+                List<Utilizator> utilizators = utilizatorRepository.SearchAllPacients();
+                return new Response(request, request.getId(), utilizators, true);
+            }
+            else if (request.getAdditionalInfo().equals("consultatie_prescriptie")) {
+                int idPacient = (Integer) request.getPayload();
+                istoric = cr.SearchConsultatieByPacientId(idPacient);
+
+                HashMap<Consultatie, Prescriptie> consultatiePrescriptieHashMap = new HashMap<>();
+                istoric.forEach(consultatie -> consultatiePrescriptieHashMap.put(consultatie, pr.SearchPrescriptieOfConsultatie(consultatie.getId())));
+                return new Response(request, request.getId(), consultatiePrescriptieHashMap, true);
+            }
+            else return new Response(request, -1, null, false);
+
+        } catch (Exception e) {
+            return new Response(request, -1, null, false);
+        }
     }
 
     public Response viewProgramariHandler(Request request) {
