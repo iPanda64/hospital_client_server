@@ -98,6 +98,13 @@ public class ServerController {
                                         .viewProgramariHandler(request));
                         break;
                     }
+                    case DoctorViewFisaMedicala:{
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .viewFisaMedicalaPacientHandler(request));
+                        break;
+                    }
                     case DoctorViewDatePersonalePacient: {
                         client.sendToClient(
                                 new DoctorManipulator()

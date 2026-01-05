@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ViewProgramariDoctorController extends BaseViewController {
-    private final Client client;
+private final Client client;
 
     public ViewProgramariDoctorController(ClientController clientController, Client client) {
         super(clientController, client, "viewProgramariDoc.html");

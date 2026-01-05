@@ -47,6 +47,6 @@ public class ViewDatePersonalePacientDocController extends BaseViewController {
     }
 
     public void next() {
-        clientController.switchView(ViewType.VIEW_PROGRAMARI_DOCTOR);
+        clientController.switchView(ViewType.VIEW_FISA_MEDICALA_PACIENT_DOCTOR);
     }
 }

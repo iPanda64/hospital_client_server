@@ -17,4 +17,5 @@ public enum UseCaseType {
 
     DoctorViewProgramari,
     DoctorViewDatePersonalePacient,
+    DoctorViewFisaMedicala,
 }

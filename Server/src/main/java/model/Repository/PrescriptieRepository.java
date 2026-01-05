@@ -75,16 +75,40 @@ public class PrescriptieRepository {
         }
         return prescriptie;
     }
+    public Prescriptie SearchPrescriptieOfConsultatie(int consultatieId) {
+        Prescriptie prescriptie = null;
+        String sql = "SELECT * FROM prescriptie WHERE id_consultatie = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            Connection connection = repository.getConnection();
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, consultatieId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                prescriptie = mapResultSetToPrescriptie(resultSet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            repository.closeResultSet(resultSet);
+            repository.closeStatement(statement);
+            repository.closeConnection();
+        }
+
+        return prescriptie;
+    }
     private Prescriptie mapResultSetToPrescriptie(ResultSet rs) throws SQLException {
         int id = rs.getInt("id");
         int id_consultatie = rs.getInt("id_consultatie");
-        String medicamenteStr = rs.getString("medicamente");
+        String medicamenteStr = rs.getString("medicament");
         List<String> medicamente = new ArrayList<>();
         if (medicamenteStr != null && !medicamenteStr.isEmpty()) {
             medicamente = new ArrayList<>(Arrays.asList(medicamenteStr.split(",")));
         }
         int doza = rs.getInt("doza_zilnica");
-        int durata = rs.getInt("durata_zile");
+        int durata = rs.getInt("durata_tratament_in_zile");
 
         return new Prescriptie(id, id_consultatie, medicamente, doza, durata);
     }

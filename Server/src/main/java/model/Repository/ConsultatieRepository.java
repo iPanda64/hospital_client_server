@@ -296,7 +296,7 @@ public class ConsultatieRepository {
         String simptomeStr = resultSet.getString("simptome");
         List<String> simptome = (simptomeStr != null && !simptomeStr.isEmpty()) ? Arrays.asList(simptomeStr.split(",")) : new ArrayList<>();
         int cost = resultSet.getInt("cost");
-        Date dbDate = resultSet.getDate("data_consultatiei");
+        Date dbDate = resultSet.getDate("data_consultatie");
         LocalDate data_consultatiei = (dbDate != null) ? dbDate.toLocalDate() : null;
 
         return new Consultatie(id, id_programare, diagnostic, simptome, cost, data_consultatiei);
