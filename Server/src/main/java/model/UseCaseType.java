@@ -26,5 +26,6 @@ public enum UseCaseType {
     AsistentCreareProgramare,
     AsistentViewPrescriptii,
     AsistentGetFacturaData,
+    AsistentViewDatePersonalePacienti,
 
 }
