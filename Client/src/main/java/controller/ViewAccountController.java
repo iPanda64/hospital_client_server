@@ -37,7 +37,9 @@ public class ViewAccountController extends BaseViewController{
             clientController.switchView(ViewType.PACIENT);
         }else if(utilizatorTip==UtilizatorType.doctor)
             clientController.switchView(ViewType.VIEW_FISA_MEDICALA_PACIENT_DOCTOR);
-
+        else if(utilizatorTip==UtilizatorType.asistent){
+            clientController.switchView(ViewType.ASISTENT);
+        }
         else clientController.switchView(ViewType.LOGIN);
     }
     public void next(){
@@ -48,6 +50,8 @@ public class ViewAccountController extends BaseViewController{
             clientController.switchView(ViewType.VIEW_FACTURI);
         }else if(utilizatorTip==UtilizatorType.doctor){
             clientController.switchView(ViewType.VIEW_PROGRAMARI_DOCTOR);
+        }else if(utilizatorTip==UtilizatorType.asistent){
+            clientController.switchView(ViewType.ASISTENT);
         }
         else clientController.switchView(ViewType.LOGIN);
     }

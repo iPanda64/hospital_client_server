@@ -99,6 +99,10 @@ public class ViewFisaMedicalaPacientDocController extends BaseViewController {
             e.printStackTrace();
         }
     }
+    public void printPDF(String p){
+        PdfSaver.saveTextToDesktop(p,"prescriptie.pdf");
+        clientController.showSuccess("Prescriptia salvata pe desktop");
+    }
     public void previous() {
         clientController.switchView(ViewType.VIEW_DATE_PERSONALE_PACIENT_DOC);
     }

@@ -69,6 +69,7 @@ function showDetails(index, clickedLi) {
                 <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
                 <p><strong>Doza Zilnica:</strong> <br>${item.prescriptie.doza_zilnica}</p>
                 <p><strong>Durata:</strong> <br>${item.prescriptie.durata_tratament_in_zile} zile</p>
+                <button class="btn btn-primary" onclick="printPDF(${index})">Print</button>
             </div>
         `;
     } else {
@@ -78,6 +79,18 @@ function showDetails(index, clickedLi) {
                 <button class="btn btn-primary" onclick="showPrescriptionForm(${item.id})">Add</button>
             </div>
         `;
+    }
+}
+
+function printPDF(index) {
+    const item = fisaMedicala[index];
+    if (item && item.prescriptie) {
+        const p = item.prescriptie;
+        const formattedText = `Medicament: ${p.medicament}\nDoza Zilnica: ${p.doza_zilnica}\nDurata Tratament: ${p.durata_tratament_in_zile} zile`;
+        
+        if(window.javaBridge) {
+            javaBridge.printPDF(formattedText);
+        } 
     }
 }
 

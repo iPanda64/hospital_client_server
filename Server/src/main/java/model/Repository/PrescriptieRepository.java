@@ -33,7 +33,8 @@ public class PrescriptieRepository {
         List<Prescriptie> prescriptii = new ArrayList<>();
         String sql = "SELECT pr.* FROM prescriptie pr " +
                 "JOIN consultatie c ON pr.id_consultatie = c.id " +
-                "WHERE c.id_pacient = ?";
+                "JOIN programare p ON p.id = c.id_programare " +
+                "WHERE p.id_pacient = ?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
