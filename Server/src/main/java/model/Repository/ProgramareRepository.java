@@ -142,11 +142,27 @@ public class ProgramareRepository {
             repository.closeConnection();
         }
     }
+    public boolean isSafeToAddConsultatie(int programareId) {
+        String sql = "SELECT 1 FROM consultatie WHERE id_programare = ?";
 
-    public Prescriptie findByConsultatieId(Long consultatieId) {
-        return null;
+        try (Connection connection = repository.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, programareId);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return false;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
     }
-
     private Programare mapResultSetToProgramare(ResultSet rs) throws SQLException {
         int id = rs.getInt("id");
         int id_doctor = rs.getInt("id_doctor");

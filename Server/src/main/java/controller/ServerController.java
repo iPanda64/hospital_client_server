@@ -112,6 +112,20 @@ public class ServerController {
                                         .viewDatePersonalePacienti(request));
                         break;
                     }
+                    case DoctorCreateConsultatie: {
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .createConsultatieHandler(request));
+                        break;
+                    }
+                    case DoctorCreatePrescriptie: {
+                        client.sendToClient(
+                                new DoctorManipulator()
+                                        .instantiate(request)
+                                        .createPrescriptiePacientiHandler(request));
+                        break;
+                    }
                     case Chat:
                         // Broadcast chat message to all clients
                         String chatMessage = (String) request.getPayload();

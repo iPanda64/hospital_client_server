@@ -17,6 +17,8 @@ public class ViewFisaMedicalaPacientDocHandler implements ResponseHandler {
 
     @Override
     public void handle(Response<?> response) {
+        if(response.getRequest().getUseCaseType().equals(UseCaseType.DoctorViewFisaMedicala))
+        {
         if (response.isSuccessful()) {
             try {
                 if (clientController.getActiveController() instanceof ViewFisaMedicalaPacientDocController) {
@@ -36,6 +38,17 @@ public class ViewFisaMedicalaPacientDocHandler implements ResponseHandler {
             }
         } else {
             clientController.showError("Can't access pacient data");
+        }}
+        else {
+            if (response.isSuccessful()) {
+                if (clientController.getActiveController() instanceof ViewFisaMedicalaPacientDocController) {
+                    {
+                        ViewFisaMedicalaPacientDocController controller = (ViewFisaMedicalaPacientDocController) clientController.getActiveController();
+                        clientController.showSuccess("Presciptie adaugata");
+                        clientController.switchView(ViewType.VIEW_FISA_MEDICALA_PACIENT_DOCTOR);
+                    }
+                } else clientController.showError("Eroare: Există deja o prescripție sau a apărut o problemă la server.");
+            }
         }
     }
 }

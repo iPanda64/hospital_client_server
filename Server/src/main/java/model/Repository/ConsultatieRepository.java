@@ -18,7 +18,7 @@ public class ConsultatieRepository {
     }
 
     public boolean AddConsultatie(Consultatie consultatie) {
-        String sql = "INSERT INTO consultatie (id_programare, diagnostic, simptome, cost, data_consultatiei) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO consultatie (id_programare, diagnostic, simptome, cost, data_consultatie) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement statement = null;
         boolean success = false;
 
@@ -288,7 +288,28 @@ public class ConsultatieRepository {
 
         return consultatie;
     }
+    public boolean isSafeToAddPrescriptie(int consultatieId){
 
+        String sql = "SELECT 1 FROM prescriptie WHERE id_consultatie = ?";
+
+        try (Connection connection = repository.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, consultatieId);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return false;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
     private Consultatie mapResultSetToConsultatie(ResultSet resultSet) throws SQLException {
         int id = resultSet.getInt("id");
         int id_programare = resultSet.getInt("id_programare");

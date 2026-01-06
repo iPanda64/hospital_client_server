@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Programari</title>
     <link rel="stylesheet" href="viewFacturi.css">
+    <link rel="stylesheet" href="viewProgramariDoc.css">
     <link rel="stylesheet" href="navigation.css">
 </head>
 <body>
@@ -26,6 +27,34 @@
         <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
     </div>
 </div>
+
+<div id="consultatieModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title" id="modalTitle">Consultatia programarii</h2>
+        <form id="consultatieForm" onsubmit="handleFormSubmit(event)">
+            <input type="hidden" id="programareId">
+            <div class="form-group">
+                <label for="diagnostic">Diagnostic</label>
+                <input type="text" id="diagnostic" required>
+            </div>
+            <div class="form-group">
+                <label for="simptome">Simptome</label>
+                <input type="text" id="simptome" required>
+            </div>
+            <div class="form-group">
+                <label for="cost">Cost</label>
+                <input type="number" id="cost" required>
+            </div>
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Save Consultatie</button>
+        </form>
+    </div>
+</div>
+
 <script src="viewProgramariDoc.js"></script>
 </body>
 </html>

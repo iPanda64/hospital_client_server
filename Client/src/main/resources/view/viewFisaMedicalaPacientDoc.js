@@ -1,4 +1,3 @@
-// --- GLOBAL VARIABLES ---
 let pacienti = [];
 
 let fisaMedicala = []; 
@@ -76,8 +75,53 @@ function showDetails(index, clickedLi) {
         container.innerHTML = `
             <div class="card empty-card">
                 <p>Nu a fost prescris niciun medicament la aceasta consultatie.</p>
+                <button class="btn btn-primary" onclick="showPrescriptionForm(${item.id})">Add</button>
             </div>
         `;
+    }
+}
+
+function showPrescriptionForm(consultatieId) {
+    const container = document.getElementById("detail-content");
+    container.innerHTML = `
+        <form id="prescriptionForm" onsubmit="handlePrescriptionSubmit(event, ${consultatieId})">
+            <div class="form-group">
+                <label for="medicament">Medicament</label>
+                <input type="text" id="medicament" required>
+            </div>
+            <div class="form-group">
+                <label for="doza">Doza Zilnica</label>
+                <input type="number" id="doza" required>
+            </div>
+            <div class="form-group">
+                <label for="durata">Durata Tratament (zile)</label>
+                <input type="number" id="durata" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Prescription</button>
+        </form>
+    `;
+}
+
+function handlePrescriptionSubmit(event, consultatieId) {
+    event.preventDefault();
+    const medicament = document.getElementById('medicament').value;
+    const doza = document.getElementById('doza').value;
+    const durata = document.getElementById('durata').value;
+
+    if (window.javaBridge) {
+        javaBridge.createPrescription(consultatieId, medicament, doza, durata);
+    } else {
+        console.log(`Creating prescription for consultatie ${consultatieId}:`, { medicament, doza, durata });
+        const consultatie = fisaMedicala.find(f => f.id === consultatieId);
+        if (consultatie) {
+            consultatie.prescriptie = {
+                medicament: medicament,
+                doza_zilnica: doza,
+                durata_tratament_in_zile: durata
+            };
+            const index = fisaMedicala.findIndex(f => f.id === consultatieId);
+            showDetails(index, null);
+        }
     }
 }
 

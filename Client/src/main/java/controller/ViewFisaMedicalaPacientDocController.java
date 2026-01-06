@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import model.*;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -71,7 +72,8 @@ public class ViewFisaMedicalaPacientDocController extends BaseViewController {
                         );
                     }
                     return String.format(
-                            "{\"data_consultatie\":\"%s\",\"diagnostic\":\"%s\",\"simptome\":\"%s\",\"cost\":%d,\"prescriptie\":%s}",
+                            "{\"id\":\"%s\",\"data_consultatie\":\"%s\",\"diagnostic\":\"%s\",\"simptome\":\"%s\",\"cost\":%d,\"prescriptie\":%s}",
+                            c.getId(),
                             c.getData_consultatiei().toString(),
                             c.getDiagnostic(),
                             String.join(", ", c.getSimptome()),
@@ -86,10 +88,21 @@ public class ViewFisaMedicalaPacientDocController extends BaseViewController {
         });
     }
 
+    public void createPrescription(int consultatieId,String medicament,int doza,int durata){
+        try {
+
+            List<String> medicamente = Arrays.asList(medicament.split(","));
+            Prescriptie prescriptie=new Prescriptie(consultatieId,medicamente,doza,durata);
+            Request request = new Request(UseCaseType.DoctorCreatePrescriptie,prescriptie);
+            client.sendToServer(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void previous() {
         clientController.switchView(ViewType.VIEW_DATE_PERSONALE_PACIENT_DOC);
     }
     public void next(){
-        //todo
+        clientController.switchView(ViewType.VIEW_ACCOUNT);
     }
 }

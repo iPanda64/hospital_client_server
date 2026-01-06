@@ -11,7 +11,7 @@ public class PrescriptieRepository {
         this.repository = new Repository();
     }
     public void salvare(Prescriptie p) {
-        String sql = "INSERT INTO prescriptie (id_consultatie, medicamente, doza_zilnica, durata_zile) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO prescriptie (id_consultatie, medicament, doza_zilnica, durata_tratament_in_zile) VALUES (?, ?, ?, ?)";
         PreparedStatement statement = null;
         try {
             Connection connection = repository.getConnection();

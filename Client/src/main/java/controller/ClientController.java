@@ -37,7 +37,8 @@ public class ClientController implements MessageHandler {
         responseHandlers.put(UseCaseType.DoctorViewProgramari, new ViewProgramariDoctorResponseHandler (this));
         responseHandlers.put(UseCaseType.DoctorViewDatePersonalePacient, new ViewDatePersonalePacientDocResponseHandler(this));
         responseHandlers.put(UseCaseType. DoctorViewFisaMedicala, new ViewFisaMedicalaPacientDocHandler(this));
-
+        responseHandlers.put(UseCaseType. DoctorCreateConsultatie, new ViewProgramariDoctorResponseHandler(this));
+        responseHandlers.put(UseCaseType. DoctorCreatePrescriptie, new ViewFisaMedicalaPacientDocHandler(this));
         responseHandlers.put(UseCaseType.PacientViewProgramari, new PacientResponseHandler(this));
         responseHandlers.put(UseCaseType.PacientCreateProgramare, new PacientResponseHandler(this));
         responseHandlers.put(UseCaseType.PacientViewHistory, new PacientResponseHandler(this));

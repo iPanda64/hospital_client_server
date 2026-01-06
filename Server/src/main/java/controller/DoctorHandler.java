@@ -65,7 +65,9 @@ public class DoctorHandler extends AbstractHandler {
                 int pacient_id = programare.getId_pacient();
                 Utilizator utilizator = utilizatorRepository.findById(pacient_id);
                 if (utilizator != null) {
-                    result.add(utilizator.getNume()+" "+
+                    result.add(
+                            programare.getId()+" "+
+                            utilizator.getNume()+" "+
                             utilizator.getPrenume()+" "+
                             programare.getData_programarii()+" "+
                             programare.getStatus());
@@ -80,14 +82,40 @@ public class DoctorHandler extends AbstractHandler {
     }
 
     public Response createPrescriptiePacientiHandler(Request request) {
-        return null;
+        Response response=null;
+        Prescriptie prescriptie=null;
+        try{
+            prescriptie=(Prescriptie) request.getPayload();
+            ConsultatieRepository cr = new ConsultatieRepository();
+            PrescriptieRepository pr = new PrescriptieRepository();
+            if(cr.isSafeToAddPrescriptie(prescriptie.getId_consultatie())){
+                pr.salvare(prescriptie);
+                response=new Response(request,request.getId(),null,true);
+            }else
+                response=new Response(request,request.getId(),null,false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response=new Response(request,-1,null,false);
+        }
+        return response;
     }
 
-    public Response viewPrescriptiePacientiHandler(Request request) {
-        return null;
-    }
-
-    public Response viewListaPacientiHandler(Request request) {
-        return null;
+    public Response createConsultatieHandler(Request request) {
+        Response response=null;
+        Consultatie consultatie=null;
+        try{
+            consultatie=(Consultatie) request.getPayload();
+            ConsultatieRepository cr = new ConsultatieRepository();
+            ProgramareRepository pr = new ProgramareRepository();
+            if(pr.isSafeToAddConsultatie(consultatie.getId_programare())){
+                cr.AddConsultatie(consultatie);
+                response=new Response(request,request.getId(),null,true);
+            }else
+            response=new Response(request,request.getId(),null,false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            response=new Response(request,-1,null,false);
+        }
+        return response;
     }
 }
