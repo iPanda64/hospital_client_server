@@ -69,3 +69,22 @@ function handleFormSubmit(e) {
     javaBridge.createProgramare(data, parseInt(idPac), parseInt(idDoc));
     closeModal();
 }
+function displayPrescriptii(jsonJson) {
+    const prescriptii = JSON.parse(jsonJson);
+    let html = "<ul>";
+    prescriptii.forEach(p => {
+        html += `<li>${p.medicament} - ${p.doza}mg (${p.durata} zile)</li>`;
+    });
+    html += "</ul>";
+    alert("Prescripții găsite: " + prescriptii.length);
+}
+
+function displayPacientDetails(jsonJson) {
+    const p = JSON.parse(jsonJson);
+    alert(`Detalii Pacient:\nNume: ${p.nume} ${p.prenume}\nTelefon: ${p.telefon}\nEmail: ${p.email}`);
+}
+
+function showFacturaPreview(jsonJson) {
+    const f = JSON.parse(jsonJson);
+    alert(`Factura ID: ${f.id}\nSuma: ${f.suma} RON\nData: ${f.data}`);
+}

@@ -88,7 +88,7 @@ public class FacturaRepository {
                 Date dbDate = resultSet.getDate("data_emitere");
                 LocalDate localDate = (dbDate != null) ? dbDate.toLocalDate() : null;
 
-                double suma = resultSet.getDouble("suma");
+                int suma = resultSet.getInt("suma");
                 Factura factura = new Factura(id, idConsultatie, localDate, suma);
 
                 listaFacturi.add(factura);

@@ -14,6 +14,10 @@ public class PacientController extends BaseViewController {
 
         onPageLoadFinished(this::getProgramari);
     }
+    public void goToProfile() {
+        Platform.runLater(() -> { clientController.switchView(ViewType.VIEW_ACCOUNT);
+        });
+    }
     public void getProgramari() {
         try {
             Request req = new Request(UtilizatorType.pacient, UseCaseType.PacientViewProgramari, null, ClientController.getCurrentId(), ClientController.getCurrentId());
@@ -71,7 +75,7 @@ public class PacientController extends BaseViewController {
 
     public void setFacturi(List<Factura> list) {
         String json = list.stream()
-                .map(f -> String.format("{\"id\":%d,\"suma\":%.2f}",
+                .map(f -> String.format("{\"id\":%d,\"suma\":%d}",
                         f.getId(), f.getSuma()))
                 .collect(Collectors.joining(",", "[", "]"));
 

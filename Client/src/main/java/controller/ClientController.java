@@ -42,6 +42,13 @@ public class ClientController implements MessageHandler {
         responseHandlers.put(UseCaseType.PacientViewProgramari, new PacientResponseHandler(this));
         responseHandlers.put(UseCaseType.PacientCreateProgramare, new PacientResponseHandler(this));
         responseHandlers.put(UseCaseType.PacientViewHistory, new PacientResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentViewPacienti, new AsistentResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentViewProgramari, new AsistentResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentGestionareProgramari, new AsistentResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentStergeProgramare, new AsistentResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentCreareProgramare, new AsistentResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentViewPrescriptii, new AsistentResponseHandler(this));
+        responseHandlers.put(UseCaseType.AsistentGetFacturaData, new AsistentResponseHandler(this));
 
 
         try {
@@ -85,6 +92,9 @@ public class ClientController implements MessageHandler {
                 break;
             case VIEW_DATE_PERSONALE_PACIENT_DOC:
                 Platform.runLater(() -> setView(new ViewDatePersonalePacientDocController(this, client)));
+                break;
+            case ASISTENT:
+                Platform.runLater(() -> setView(new AsistentController(this,client)));
                 break;
         }
     }

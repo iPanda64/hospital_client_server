@@ -45,7 +45,7 @@ public class PacientResponseHandler implements ResponseHandler {
                 break;
             case PacientViewHistory:
                 List<Consultatie> istoric = (List<Consultatie>) response.getResponseObject();
-                //pacientController.setIstoric(istoric); //asta sa o implementez
+                pacientController.setHistory(istoric); //asta sa o implementez
                 break;
             case PacientViewFacturi:
                 List<Factura> facturi = (List<Factura>) response.getResponseObject();

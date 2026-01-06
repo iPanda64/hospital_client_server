@@ -7,14 +7,14 @@ public class Factura implements Serializable {
     private int id;
     private int id_consultatie;
     private LocalDate data_emitere;
-    private double suma;
+    private int suma;
 
-    public Factura(int id_consultatie, LocalDate data_emitere, double suma) {
+    public Factura(int id_consultatie, LocalDate data_emitere, int suma) {
         this.id_consultatie = id_consultatie;
         this.data_emitere = data_emitere;
         this.suma = suma;
     }
-    public Factura(int id,int id_consultatie, LocalDate data_emitere, double suma) {
+    public Factura(int id,int id_consultatie, LocalDate data_emitere, int suma) {
         this(id_consultatie, data_emitere, suma);
         this.id = id;
     }
@@ -43,11 +43,11 @@ public class Factura implements Serializable {
         this.data_emitere = data_emitere;
     }
 
-    public double getSuma() {
+    public int getSuma() {
         return suma;
     }
 
-    public void setSuma(double suma) {
+    public void setSuma(int suma) {
         this.suma = suma;
     }
 }

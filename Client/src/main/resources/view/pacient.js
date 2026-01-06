@@ -23,7 +23,10 @@ function displayProgramari(jsonJson) {
 }
 
 function displayHistory(jsonJson) {
+    console.log("Date primite pentru istoric:", jsonJson); // Debug
     const history = JSON.parse(jsonJson);
+    const historyBody = document.getElementById('historyBody');
+    if (!historyBody) return;
     historyBody.innerHTML = '';
     history.forEach(h => {
         const row = `
@@ -57,7 +60,7 @@ function showSection(sectionId) {
         section.style.display = 'none';
     });
     document.getElementById('section-' + sectionId).style.display = 'block';
-    const titles = { 'programari': 'Programarile Mele', 'istoric': 'Istoric Medical', 'facturi': 'Facturi și Plati' };
+    const titles = { 'programari': 'Programările Mele', 'istoric': 'Istoric Medical', 'facturi': 'Facturi și Plăți' };
     document.getElementById('mainTitle').innerText = titles[sectionId];
     if (sectionId === 'programari') javaBridge.getProgramari();
     if (sectionId === 'istoric') javaBridge.getHistory();
