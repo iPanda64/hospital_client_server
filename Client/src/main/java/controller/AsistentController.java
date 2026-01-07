@@ -98,7 +98,15 @@ public class AsistentController extends BaseViewController {
         String json = String.format("{\"id\":%d,\"id_consultatie\":%d,\"data\":\"%s\",\"suma\":%d}",
                 f.getId(), f.getId_consultatie(), f.getData_emitere().toString(), f.getSuma());
 
-        Platform.runLater(() -> webEngine.executeScript(String.format("showFacturaPreview('%s');", json)));
+        Platform.runLater(() -> {
+            webEngine.executeScript(String.format("showFacturaPreview('%s');", json));
+            try {
+                System.out.println("Se genereaza PDF pentru factura: " + f.getId());
+                clientController.showSuccess("Factura a fost salvata cu succes!");
+            } catch (Exception e) {
+                clientController.showError("Eroare la salvarea PDF: " + e.getMessage());
+            }
+        });
     }
 
     public void setDetaliiPacient(Utilizator u) {
@@ -108,5 +116,17 @@ public class AsistentController extends BaseViewController {
         );
 
         Platform.runLater(() -> webEngine.executeScript(String.format("displayPacientDetails('%s');", json)));
+    }
+    public void createProgramare(String data, String idPacient, String idDoctor) {
+        try {
+            LocalDate dataProg = LocalDate.parse(data);
+            int pacId = Integer.parseInt(idPacient);
+            int docId = Integer.parseInt(idDoctor);
+            Programare noua = new Programare(docId, pacId, dataProg, StatusProgramare.InAsteptare);
+            Request req = new Request(UtilizatorType.asistent, UseCaseType.AsistentCreareProgramare, null, ClientController.getCurrentId(), noua);
+            client.sendToServer(req);
+        } catch (Exception e) {
+            clientController.showError("Date invalide pentru programare.");
+        }
     }
 }

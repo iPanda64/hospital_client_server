@@ -19,7 +19,8 @@ function displayProgramari(jsonJson) {
                 <td><span class="status-badge status-${app.status.toLowerCase()}">${app.status}</span></td>
                 <td>
                     ${app.status !== 'Aprobata' ? `<button class="btn-action btn-approve" onclick="javaBridge.approveProgramare(${app.id})">Aproba</button>` : ''}
-                    <button class="btn-action btn-delete" onclick="javaBridge.deleteProgramare(${app.id})">Respinge</button>
+    <button class="btn-action btn-delete" onclick="javaBridge.deleteProgramare(${app.id})">Respinge</button>
+    <button class="btn-action" style="background-color: #9b59b6; color: white; border: none;" onclick="javaBridge.printFactura(${app.id})">Factura</button>
                 </td>
             </tr>
         `;
@@ -71,12 +72,24 @@ function handleFormSubmit(e) {
 }
 function displayPrescriptii(jsonJson) {
     const prescriptii = JSON.parse(jsonJson);
-    let html = "<ul>";
-    prescriptii.forEach(p => {
-        html += `<li>${p.medicament} - ${p.doza}mg (${p.durata} zile)</li>`;
-    });
-    html += "</ul>";
-    alert("Prescripții găsite: " + prescriptii.length);
+    const container = document.getElementById('listaPrescriptiiUI');
+    const sectiune = document.getElementById('section-prescriptii');
+
+    if (prescriptii.length === 0) {
+        container.innerHTML = "<p>Nu exista prescriptii pentru acest pacient.</p>";
+    } else {
+        let html = "<ul style='list-style: none; padding: 0;'>";
+        prescriptii.forEach(p => {
+            html += `<li style='background: #f1f2f6; margin: 5px 0; padding: 10px; border-radius: 5px;'>
+                        <strong>Medicament:</strong> ${p.medicament} | 
+                        <strong>Doza:</strong> ${p.doza}mg | 
+                        <strong>Durata:</strong> ${p.durata} zile
+                     </li>`;
+        });
+        html += "</ul>";
+        container.innerHTML = html;
+    }
+    sectiune.style.display = 'block';
 }
 
 function displayPacientDetails(jsonJson) {
