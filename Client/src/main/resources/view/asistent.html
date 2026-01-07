@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Interfata Asistent</title>
   <link rel="stylesheet" href="asistent.css">
+  <link rel="stylesheet" href="navigation.css">
 </head>
 <body>
 <div class="container">
@@ -18,7 +19,6 @@
     <button id="tab-programari" class="btn btn-tab active" onclick="showSection('programari')">Toate Programarile</button>
     <button id="tab-pacienti" class="btn btn-tab" onclick="showSection('pacienti')">Lista Pacienti</button>
   </div>
-
   <div id="section-programari" class="content-section">
     <table>
       <thead>
@@ -47,6 +47,15 @@
       <tbody id="pacientiBody"></tbody>
     </table>
   </div>
+
+  <div id="section-prescriptii" class="content-section" style="display:none;">
+    <h2>Prescriptii Pacient</h2>
+    <div id="listaPrescriptiiUI"></div>
+  </div>
+    <div id="nav-bar">
+        <button id="btn-prev" class="nav-btn" onclick="previous()">« Previous</button>
+        <button id="btn-next" class="nav-btn" onclick="next()">Next »</button>
+    </div>
 </div>
 
 <div id="appModal" class="modal">

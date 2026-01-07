@@ -26,7 +26,6 @@ public class ClientController implements MessageHandler {
 
         this.responseHandlers = new HashMap<>();
         responseHandlers.put(UseCaseType.Login, new LoginResponseHandler(this));
-        responseHandlers.put(UseCaseType.Chat, new ChatResponseHandler(this));
         responseHandlers.put(UseCaseType.ViewAccount, new ViewAccountResponseHandler(this));
         responseHandlers.put(UseCaseType.CreateAccount, new CreateAccountHandler(this));
         responseHandlers.put(UseCaseType.AdminViewAllAccounts, new AdminCrudResponseHandler(this));
@@ -65,9 +64,6 @@ public class ClientController implements MessageHandler {
                     setView(new LoginController(this, client));
                     primaryStage.show();
                 });
-                break;
-            case CHAT:
-                Platform.runLater(() -> setView(new ChatController(this, client)));
                 break;
             case VIEW_ACCOUNT:
                 Platform.runLater(() -> setView(new ViewAccountController(this, client)));

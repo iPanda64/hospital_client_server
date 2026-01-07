@@ -44,6 +44,6 @@ public class ViewFacturiController extends BaseViewController{
         clientController.switchView(ViewType.VIEW_ACCOUNT);
     }
     public void next(){
-        clientController.switchView(ViewType.VIEW_ACCOUNT);
+        clientController.switchView(ViewType.PACIENT);
     }
 }

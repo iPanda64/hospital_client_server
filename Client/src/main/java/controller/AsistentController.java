@@ -144,4 +144,10 @@ public class AsistentController extends BaseViewController {
             clientController.showError("Date invalide pentru programare.");
         }
     }
+    public void previous(){
+        clientController.switchView(ViewType.VIEW_ACCOUNT);
+    }
+    public void next(){
+        clientController.switchView(ViewType.VIEW_ACCOUNT);
+    }
 }

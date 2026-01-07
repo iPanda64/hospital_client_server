@@ -72,16 +72,26 @@ function handleFormSubmit(e) {
 }
 function displayPrescriptii(jsonJson) {
     const prescriptii = JSON.parse(jsonJson);
-    const container = document.getElementById('listaPrescriptiiUI');
     const sectiune = document.getElementById('section-prescriptii');
+    const container = document.getElementById('listaPrescriptiiUI');
+
+    if (!sectiune || !container) {
+        console.error("Required elements for prescriptions not found.");
+        return;
+    }
+
+    document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+    sectiune.style.display = 'block';
+    document.querySelectorAll('.btn-tab').forEach(b => b.classList.remove('active'));
 
     if (prescriptii.length === 0) {
-        container.innerHTML = "<p>Nu exista prescriptii pentru acest pacient.</p>";
+        container.innerHTML = "<p class='placeholder'>Nu exista prescriptii pentru acest pacient.</p>";
     } else {
         let html = "<ul style='list-style: none; padding: 0;'>";
         prescriptii.forEach(p => {
+            const medicament = p.medicament.replace(/[\[\]]/g, ''); // Clean up the medicament string
             html += `<li style='background: #f1f2f6; margin: 5px 0; padding: 10px; border-radius: 5px;'>
-                        <strong>Medicament:</strong> ${p.medicament} | 
+                        <strong>Medicament:</strong> ${medicament} | 
                         <strong>Doza:</strong> ${p.doza}mg | 
                         <strong>Durata:</strong> ${p.durata} zile
                      </li>`;
@@ -89,7 +99,6 @@ function displayPrescriptii(jsonJson) {
         html += "</ul>";
         container.innerHTML = html;
     }
-    sectiune.style.display = 'block';
 }
 
 function displayPacientDetails(jsonJson) {
@@ -100,4 +109,10 @@ function displayPacientDetails(jsonJson) {
 function showFacturaPreview(jsonJson) {
     const f = JSON.parse(jsonJson);
     alert(`Factura ID: ${f.id}\nSuma: ${f.suma} RON\nData: ${f.data}`);
+}
+function next(){
+    javaBridge.next()
+}
+function previous(){
+    javaBridge.previous()
 }
