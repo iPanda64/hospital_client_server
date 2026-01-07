@@ -95,7 +95,7 @@ public class AsistentController extends BaseViewController {
     }
 
     public void displayFacturaData(Factura f) {
-        String json = String.format("{\"id\":%d,\"id_consultatie\":%d,\"data\":\"%s\",\"suma\":%d}",
+        /*String json = String.format("{\"id\":%d,\"id_consultatie\":%d,\"data\":\"%s\",\"suma\":%d}",
                 f.getId(), f.getId_consultatie(), f.getData_emitere().toString(), f.getSuma());
 
         Platform.runLater(() -> {
@@ -106,6 +106,21 @@ public class AsistentController extends BaseViewController {
             } catch (Exception e) {
                 clientController.showError("Eroare la salvarea PDF: " + e.getMessage());
             }
+        });*/
+        StringBuilder sb = new StringBuilder();
+        sb.append("--- FACTURA MEDICALA ---\n");
+        sb.append("Numar Factura: ").append(f.getId()).append("\n");
+        sb.append("Numar Consultatie: ").append(f.getId_consultatie()).append("\n");
+        sb.append("Data Emitere: ").append(f.getData_emitere()).append("\n");
+        sb.append("Suma de plata: ").append(f.getSuma()).append(" RON\n");
+        //sb.append("------------------------\n");
+       // sb.append("Va multumim!");
+        Platform.runLater(() -> {
+            PdfSaver.saveTextToDesktop(sb.toString(), "Factura_" + f.getId() + ".pdf");
+            clientController.showSuccess("Factura a fost salvata pe Desktop!");
+            String json = String.format("{\"id\":%d,\"suma\":%d,\"data\":\"%s\"}",
+                    f.getId(), f.getSuma(), f.getData_emitere().toString());
+            webEngine.executeScript(String.format("showFacturaPreview('%s');", json));
         });
     }
 
