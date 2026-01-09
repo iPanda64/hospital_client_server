@@ -4,6 +4,8 @@ import model.Request;
 import model.Response;
 import model.Repository.*;
 import model.*;
+import notificare.NotificareSimulare;
+
 import java.util.List;
 public class AsistentHandler extends AbstractHandler {
     public AsistentHandler(Request request) {
@@ -50,9 +52,16 @@ public class AsistentHandler extends AbstractHandler {
 
     public Response deleteProgramariPacientiHandler(Request request) {
         ProgramareRepository pr = new ProgramareRepository();
+        UtilizatorRepository ur = new UtilizatorRepository(new Repository());
         try {
             long idProgramare = (Integer) request.getPayload();
+            Programare p = pr.findById((long)idProgramare);
+            Utilizator u = (p!=null) ? ur.findById(p.getId_pacient()) : null;
             pr.delete(idProgramare);
+
+            if (p != null && u != null) {
+                NotificareSimulare.simulateNotification(u,p,"RESPINSA");
+            }
             List<Programare> listaNoua = pr.findAll();
             return new Response(request, request.getId(), listaNoua, true);
         } catch (Exception e) {
@@ -62,9 +71,17 @@ public class AsistentHandler extends AbstractHandler {
 
     public Response approveProgramariPacientiHandler(Request request) {
         ProgramareRepository pr = new ProgramareRepository();
+        UtilizatorRepository ur = new UtilizatorRepository(new Repository());
         try {
             long idProgramare = (Integer) request.getPayload();
             pr.updateStatus(idProgramare, String.valueOf(StatusProgramare.Aprobata));
+            Programare p=pr.findById((long)idProgramare);
+            if (p != null) {
+                Utilizator pacient = ur.findById(p.getId_pacient());
+                if (pacient != null) {
+                    NotificareSimulare.simulateNotification(pacient, p, "APROBATA");
+                }
+            }
             List<Programare> listaNoua = pr.findAll();
             return new Response(request, request.getId(), listaNoua, true);
         } catch (Exception e) {

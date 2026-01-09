@@ -163,6 +163,28 @@ public class ProgramareRepository {
 
         return true;
     }
+    public Programare findById(Long id) {
+        String sql = "SELECT * FROM programare WHERE id = ?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            Connection connection = repository.getConnection();
+            stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                return mapResultSetToProgramare(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            repository.closeResultSet(rs);
+            repository.closeStatement(stmt);
+            repository.closeConnection();
+        }
+        return null;
+    }
     private Programare mapResultSetToProgramare(ResultSet rs) throws SQLException {
         int id = rs.getInt("id");
         int id_doctor = rs.getInt("id_doctor");
@@ -172,4 +194,5 @@ public class ProgramareRepository {
 
         return new Programare(id, id_doctor, id_pacient, data, status);
     }
+
 }
