@@ -39,7 +39,11 @@ private final Client client;
                     String nume = parts[1];
                     String prenume = parts[2];
                     String dataProgramare = parts[3];
-                    String status = parts[4]+" "+parts[5];
+                    String status;
+                    if(parts.length==5)
+                         status = parts[4];
+                        else
+                           status = parts[4]+" "+parts[5];
                     return String.format(
                             "{\"id\":\"%s\",\"nume\":\"%s\",\"prenume\":\"%s\",\"data_emitere\":\"%s\",\"status\":\"%s\"}",
                             id,nume, prenume, dataProgramare, status
