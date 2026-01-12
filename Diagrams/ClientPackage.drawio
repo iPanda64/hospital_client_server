@@ -1,0 +1,34 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="R8ndiFh1BytYnNkrDY3F">
+    <mxGraphModel dx="1011" dy="501" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RdpcUUuMt_VGv3F_2Ofw-6" value="Client Package" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="690" y="460" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RdpcUUuMt_VGv3F_2Ofw-7" value="View" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="720" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RdpcUUuMt_VGv3F_2Ofw-8" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="RdpcUUuMt_VGv3F_2Ofw-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="800" y="620" as="sourcePoint" />
+            <mxPoint x="718" y="663" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RdpcUUuMt_VGv3F_2Ofw-9" value="Controller" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="669" y="612" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RdpcUUuMt_VGv3F_2Ofw-10" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="RdpcUUuMt_VGv3F_2Ofw-9">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="804" y="512" as="sourcePoint" />
+            <mxPoint x="722" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RdpcUUuMt_VGv3F_2Ofw-11" value="Model" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="507" width="100" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
