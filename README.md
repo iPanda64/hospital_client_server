@@ -1,6 +1,6 @@
 # Hospital Client-Server System
 
-This project is a comprehensive Hospital Management System designed to streamline various hospital operations. It follows a client-server architecture, with a JavaFX-based client application for the user interface and a Java-based server for handling business logic and database interactions. The system supports multiple user roles, each with a specific set of permissions and functionalities.
+This project is a comprehensive Hospital Management System designed to streamline various hospital operations. It follows a client-server architecture featuring a hybrid JavaFX client that renders a modern HTML, CSS, and JavaScript interface via WebView and a Java-based server for handling business logic and database interactions. The system supports multiple user roles, each with a specific set of permissions and functionalities.
 
 The application uses a MySQL database for data storage and a custom communication protocol for client-server interaction.
 
