@@ -1,4 +1,4 @@
-# Hospital Management System
+# Hospital Client-Server System
 
 This project is a comprehensive Hospital Management System designed to streamline various hospital operations. It follows a client-server architecture, with a JavaFX-based client application for the user interface and a Java-based server for handling business logic and database interactions. The system supports multiple user roles, each with a specific set of permissions and functionalities.
 
@@ -52,7 +52,7 @@ The application uses a MySQL database for data storage and a custom communicatio
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/hospital_client_server.git
+    git clone https://github.com/iPanda64/hospital_client_server.git
     cd hospital_client_server
     ```
 2.  **Set up the database:**
