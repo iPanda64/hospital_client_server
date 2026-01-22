@@ -93,3 +93,15 @@ The application uses a MySQL database for data storage and a custom communicatio
         cd Client
         mvn javafx:run
         ```
+## Default Login Credentials
+
+For testing or initial use, you can log in with the following accounts:
+
+| Role       | Username | Password |
+|------------|----------|----------|
+| Administrator | admin1 | admin123 |
+| Doctor    | drpopescu | medic123 |
+| Assistant  | asistelaura | asist123 |
+| Patient | pacientalex | alex123 |
+
+> All accounts are stored in the MySQL database. You can create or modify users through the Administrator interface.
